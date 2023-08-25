@@ -3,3 +3,4 @@ Um sistema de visualização de produtos e comparação de preços que possui co
 
 
 Thalita Gabrielle
+João Pedro
