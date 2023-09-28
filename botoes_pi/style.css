@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100;400&display=swap');
+
+.button{
+    background-color: #CB9888;
+    border-radius: 7px;
+    font-family: 'Overpass', sans-serif;
+    border-color: #CB9888;
+    text-align: right;
+}
+.button:hover{
+    background-color: #dc9883;
+    border-color: #dc9883;
+}
+div{
+    display: flex;
+    gap: 6px;
+}
+img{
+    height: 15px;
+    width: 15px;
+    text-align: left;
+}
