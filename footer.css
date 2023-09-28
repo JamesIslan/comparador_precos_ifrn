@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@500&display=swap');
+
+body{
+  margin: 0;
+}
+
+.rodape-geral{
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: #686565;
+}
+
+.rodape-geral #rodape-logo-ifrn{
+  width: 132px;
+  height: 53px;
+}
+
+.rodape-geral #rodape-info{
+  color: #EDE7DF;
+  font-family: "Overpass";
+  font-size: 22px;
+  margin: 0px;
+}
