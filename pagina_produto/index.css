@@ -1,0 +1,164 @@
+body{
+    background-color: #ede7df;
+    color: #60664f;
+    position: absolute;
+    display: block;
+    top: 30%;
+    left: 40%;
+    transform:translate(-32%, -32%);
+    zoom: 80%;
+}
+
+@media screen and (max-width: 1690px) {
+    body{
+        position: absolute;
+        display: block;
+        top: 60%;
+        left: 40%;
+        transform:translate(-40%, -40%);
+        zoom: 75%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body{
+        position: absolute;
+        display: block;
+        top: 60%;
+        left: 40%;
+        transform:translate(-50%, -50%);
+        zoom: 50%;
+    }
+}
+/*
+.avaliacao_estrelas{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    width: 150px;
+    height: 5%;
+    line-height: 5px;
+}
+*/
+
+.avaliacao_imagem{
+    /*background-color: aquamarine;*/
+    padding: 5px;
+    width: 528.12px;
+    /*display: inline-block;*/
+}
+
+.av{
+    position: center;
+}
+
+.imagem_produto{
+    background-color: #cb9888;
+    width: 528.12px;
+    height: 352.08px;
+    border-radius: 5%;
+}
+
+.estrelas{
+    width: 15px;
+    height: 15px;
+    position: center;
+    padding-top: 10%;
+    padding-left: 1px;
+}
+
+.imagem_icone{
+    width: 75%;
+    height: 75%;
+    padding: 10%;
+}
+
+.nome_produto{
+    /*background-color: #faffec;*/
+    width: 700px;
+    padding: 10px;
+    grid-column-start: 1;
+}
+
+.imagem_padrao{
+    background-color: #cb9888;
+    width: 152.38px;
+    height: 152.38px;
+    border-radius: 4%;
+}
+
+.produto_padrao{
+    padding: 32.9px;
+}
+
+.preco_padrao{
+    text-align: center;
+    width: 152.38px;
+}
+
+.flex_produtos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 100%;
+    align-items: center;
+}
+
+.teste{
+    display: inline-block;
+    line-height: 10px;
+    vertical-align: top;
+}
+
+h3{
+    font-family: 'Overpass', sans-serif;
+    font-size: 51.68px;
+    line-height: 5px;
+}
+
+.ordenar{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 31.28px;
+    line-height: 5px;
+}
+.endereco{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 20px;
+    line-height: 5px;
+}
+
+.nome_loja, .user, .divisao{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 26px;
+    line-height: 5px;
+}
+
+.divisao{
+    grid-column-start: 2;
+}
+
+.nome_produto{
+    font-family: 'Overpass', sans-serif;
+    font-size: 81.64px;
+    line-height: 5px;
+}
+
+.preco_comp{
+    font-family: 'Overpass', sans-serif;
+    font-size: 81.64px;
+    line-height: 5px;
+}
+
+hr{
+    background-color:#60664f;
+}
+
+/*
+.descricao{
+    display: grid;
+    grid-template-columns: repeat(3, 15vw); /*(8, 1fr)
+    grid-template-rows: repeat(1, 2vw); 
+    align-items: center;
+}
+*/
