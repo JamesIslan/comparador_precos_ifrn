@@ -18,7 +18,7 @@ body{
   align-items: center;
   gap: 20px;
   font-family: 'Overpass';
-  color: #60664F
+  color: #60664f;
 }
 
 .cabecalho-geral > nav > a{
@@ -67,7 +67,7 @@ nav > img#icone-lupa{
 
 hr{
   height: 5px;
-  width: 1920px;
+  width: 100%;
   border: 0px;
   background-color: #60664F;
   border-radius: 3px;
