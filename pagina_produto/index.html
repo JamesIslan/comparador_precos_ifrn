@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Página Produto</title>
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,91 +11,105 @@
 
 </head>
 <body>
-
-    <!--Teste de atualização-->
-
-    <!--<div class="avaliacao_estrelas">
-        <div><p>45/5</p></div>
-        <div><img src="estrela.svg" class="estrelas" alt="">
-        <img src="estrela.svg" class="estrelas" alt="">
-        <img src="estrela.svg" class="estrelas" alt="">
-        <img src="estrela.svg" class="estrelas" alt="">
-        <img src="estrela.svg" class="estrelas" alt="">
-        <div><p class="av">(1314 Avalições)</p></div>-->
-    </div>
-    <div class="teste avaliacao_imagem">
-        <div class="imagem_produto">
-            <img src="caixa-aberta-cheia.svg" class="imagem_icone"alt="">
+    <section class="secao_cima">
+        <div class="container_esq">
+            <div class="avaliacao">
+                <div class="pri_linha">
+                    <span class="teste_avalia">4,5/5</span>
+                    <img src="estrela.svg" class="estrelas" alt="">
+                    <img src="estrela.svg" class="estrelas" alt="">
+                    <img src="estrela.svg" class="estrelas" alt="">
+                    <img src="estrela.svg" class="estrelas" alt="">
+                    <img src="estrela.svg" class="estrelas" alt="">
+                </div>
+                <span class="sec_linha">(1314 Avaliações)</span>
+            </div>
+            <div class="container_produto">
+                <img src="Product.svg" id="produto" alt=""></div>
+            <div>
+                <!--class="botao salvar"-->
+                <!--<p class="p_salve">Salvar</p>-->
+                <button class="button salvar negrito">
+                    <div>
+                        <img src="Shopping Basket Star.svg" class="img" alt="">
+                        Salvar
+                    </div>
+            </div>
         </div>
-        <div class="botao"></div>
-    </div>
-
-    <div class="teste nome_produto">
-        <h1 class="nome_produto">Nome do Produto</h1>
-        <p class="nome_loja">Loja do Funalo</p>
-        <p class="divisao">•</p>
-        <p class="user">@nomedaloja</p>
-        <p class="endereco">Rua Fulano De Tal, Nº 100. Florânia/RN</p>
-        <hr size="1" width="100%" align="center" noshade>
-        <h2 class="preco_comp">R$ 10,00</h2>
-        <div class="botao_comparar"></div>
-    </div>
-    <div class="produtos">
-        <h3>PRODUTOS</h3>
-        <p class="ordenar">Ordenar por:</p>
-        <div class="botao_tag"></div>
-
-        <div class="flex_produtos">
-        <div class="produto_padrao produto_1">
-            <div class="imagem_padrao  imagem_produto_1"></div>
-            <div class="preco_padrao preco_produto_1">R$ 50,00</div>
+        <div class="container_dir">
+            <h1 id="nome_produto">Nome do Produto</h1>
+            <span id="nome_loja">Loja do Fulano</span>
+            <span id="divisao">•</span>
+            <span id="user">@nomedaloja</span>
+            <span id="endereco">Rua Fulano De Tal, Nº 100. Florânia/RN</span>
+            <hr size="1" width="100%" align="center" noshade>
+            <div class="flex_comparador">
+                <h2 id="preco_comp">R$ 10,00</h2>
+                <!--class="botao_comparar"-->
+                <button class="button p_comparar negrito" id="botao_comparar">COMPARAR</button>
+                    <!--<p class="p_comparar">COMPARAR</p>-->
+            </div>
         </div>
-        <div class="produto_padrao produto_1">
-            <div class="imagem_padrao  imagem_produto_1"></div>
-            <div class="preco_padrao preco_produto_1">R$ 50,00</div>
+    </section>
+    <section class="secao_baixo">
+        <div class="produtos">
+            <h3 id="heading_produtos">OUTROS PRODUTOS</h3>
+            <div class="flex_ordenar">
+                <p class="ordenar">Ordenar por:</p>
+                <div class="botao_tag"><p>Preço</p></div>
+                <div class="botao_tag"><p>Data</p></div>
+            </div>
+            <div class="grid_produtos">
+                <div class="produto_padrao">
+                    <div class="imagem_padrao  imagem_produto_1"></div>
+                    <p class="preco_padrao preco_produto_1">R$ 50,00</p>
+                </div>
+                <div class="produto_padrao">
+                    <div class="imagem_padrao  imagem_produto_2"></div>
+                    <p class="preco_padrao preco_produto_2">R$ 50,00</p>
+                </div>
+                <div class="produto_padrao">
+                    <div class="imagem_padrao  imagem_produto_3"></div>
+                    <p class="preco_padrao preco_produto_3">R$ 50,00</p>
+                </div>
+                <div class="produto_padrao">
+                    <div class="imagem_padrao  imagem_produto_4"></div>
+                    <p class="preco_padrao preco_produto_4">R$ 50,00</p>
+                </div>
+                <div class="produto_padrao">
+                    <div class="imagem_padrao  imagem_produto_5"></div>
+                    <p class="preco_padrao preco_produto_5">R$ 50,00</p>
+                </div>
+                <div class="produto_padrao">
+                    <div class="imagem_padrao  imagem_produto_6"></div>
+                    <p class="preco_padrao preco_produto_6">R$ 50,00</p>
+                </div>
+                <div class="produto_padrao">
+                    <div class="imagem_padrao  imagem_produto_7"></div>
+                    <p class="preco_padrao preco_produto_7">R$ 50,00</p>
+                </div>
+                <div class="produto_padrao">
+                    <div class="imagem_padrao  imagem_produto_8"></div>
+                    <p class="preco_padrao preco_produto_8">R$ 50,00</p>
+                </div>
+                <div class="produto_padrao">
+                    <div class="imagem_padrao  imagem_produto_9"></div>
+                    <p class="preco_padrao preco_produto_9">R$ 50,00</p>
+                </div>
+                <div class="produto_padrao ">
+                    <div class="imagem_padrao  imagem_produto_10"></div>
+                    <p class="preco_padrao preco_produto_10">R$ 50,00</p>
+                </div>
+                <div class="produto_padrao">
+                    <div class="imagem_padrao  imagem_produto_11"></div>
+                    <p class="preco_padrao preco_produto_11">R$ 50,00</p>
+                </div>
+                <div class="produto_padrao">
+                    <div class="imagem_padrao  imagem_produto_12"></div>
+                    <p class="preco_padrao preco_produto_12">R$ 50,00</p>
+                </div>
+            </div>
         </div>
-        <div class="produto_padrao produto_1">
-            <div class="imagem_padrao  imagem_produto_1"></div>
-            <div class="preco_padrao preco_produto_1">R$ 50,00</div>
-        </div>
-        <div class="produto_padrao produto_1">
-            <div class="imagem_padrao  imagem_produto_1"></div>
-            <div class="preco_padrao preco_produto_1">R$ 50,00</div>
-        </div>
-        <div class="produto_padrao produto_1">
-            <div class="imagem_padrao  imagem_produto_1"></div>
-            <div class="preco_padrao preco_produto_1">R$ 50,00</div>
-        </div>
-        <div class="produto_padrao produto_1">
-            <div class="imagem_padrao  imagem_produto_1"></div>
-            <div class="preco_padrao preco_produto_1">R$ 50,00</div>
-        </div>
-        <div class="produto_padrao produto_1">
-            <div class="imagem_padrao  imagem_produto_1"></div>
-            <div class="preco_padrao preco_produto_1">R$ 50,00</div>
-        </div>
-        <div class="produto_padrao produto_1">
-            <div class="imagem_padrao  imagem_produto_1"></div>
-            <div class="preco_padrao preco_produto_1">R$ 50,00</div>
-        </div>
-        <div class="produto_padrao produto_1">
-            <div class="imagem_padrao  imagem_produto_1"></div>
-            <div class="preco_padrao preco_produto_1">R$ 50,00</div>
-        </div>
-        <div class="produto_padrao produto_1">
-            <div class="imagem_padrao  imagem_produto_1"></div>
-            <div class="preco_padrao preco_produto_1">R$ 50,00</div>
-        </div>
-        <div class="produto_padrao produto_1">
-            <div class="imagem_padrao  imagem_produto_1"></div>
-            <div class="preco_padrao preco_produto_1">R$ 50,00</div>
-        </div>
-        <div class="produto_padrao produto_1">
-            <div class="imagem_padrao  imagem_produto_1"></div>
-            <div class="preco_padrao preco_produto_1">R$ 50,00</div>
-        </div>
-
-    </div>
-    </div>
+    </section>
 </body>
 </html>

@@ -1,83 +1,211 @@
-body{
+html{
+    font-size: 10px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
     background-color: #ede7df;
+    font-family: 'Overpass', sans-serif;
+}
+
+h1, h2, h3, p, span{
     color: #60664f;
-    position: absolute;
-    display: block;
-    top: 30%;
-    left: 40%;
-    transform:translate(-32%, -32%);
-    zoom: 80%;
 }
 
-@media screen and (max-width: 1690px) {
-    body{
-        position: absolute;
-        display: block;
-        top: 60%;
-        left: 40%;
-        transform:translate(-40%, -40%);
-        zoom: 75%;
-    }
+p{
+    margin:0;
 }
 
-@media screen and (max-width: 768px) {
-    body{
-        position: absolute;
-        display: block;
-        top: 60%;
-        left: 40%;
-        transform:translate(-50%, -50%);
-        zoom: 50%;
-    }
-}
-/*
-.avaliacao_estrelas{
+.secao_cima{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-
-    width: 150px;
-    height: 5%;
-    line-height: 5px;
+    gap: 100px;
+    margin-bottom: 60px;
+    width: 1100px;
+    justify-content: center;
+    & .container_esq{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        & .avaliacao{
+            align-self: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 15px;
+            & span{
+                font-size: 21px;
+            }
+            & .pri_linha{
+                display: inline-flex;
+                justify-content: center;
+                & *{
+                    margin: 0;
+                    padding: 0;
+                }
+                & span{
+                    margin: 3px 10px 0 0;
+                }
+            }
+        }
+        & .estrelas{
+            width: 23.48px;
+            height: 23.48px;
+            position: center;
+            padding-left: 1px;
+            padding-top: 8px;
+        }
+        & .container_produto{
+            display: flex;
+            background-color: #d1a89a;
+            width: 375px;
+            height: 250px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            margin-bottom: 7%;
+        }
+        & img#produto {
+            width: 240px;
+        }
+    }
+    & .container_dir{
+        position: relative;
+        top: 75px;
+        & h1#nome_produto{
+            margin:0;
+            font-size: 4.5rem;
+        }
+        & h2#preco_comp{
+            margin: 0;
+            font-size: 5rem;
+        }
+        & span#user + span{
+            display: block;
+        }
+        & .flex_comparador{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            gap: 2vw;
+        }
+        & hr{
+            background-color:#60664f;
+            margin-top: 0;
+            margin-bottom: 6%;
+        }
+        & .p_comparar{
+            color:#60664f;
+            justify-content: center;
+            text-align: center;
+            padding: 5px;
+            font-size: 32.45px;
+        }
+        & button#botao_comparar{
+            /*background-color: #cb9888;*/
+            height: 72px;
+            width: 45%;
+            border-radius: 15.13px;
+        }
+        & span{
+            font-size: 26px;
+        }
+    }
 }
-*/
+
+.secao_baixo{
+    width: 940px;
+    & h3#heading_produtos{
+        font-family: 'Overpass', sans-serif;
+        font-size: 4rem;
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+    & .produtos{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    & .flex_ordenar{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        & .ordenar{
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 31.28px;
+            position: relative;
+            top: -3px;
+        }
+    }
+    & .grid_produtos{
+        display: grid;
+        grid-template-rows: repeat(3, 1.5fr);
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 3%;
+        width: 100%;
+        & .produto_padrao{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            & .imagem_padrao{
+                width: 180px;
+                height: 180px;
+            }
+        }
+    }
+    & .preco_padrao{
+        font-family: 'Overpass', sans-serif;
+        font-weight: bold;
+        text-align: center;
+        padding-top: 11px;
+        width: 152.38px;
+        font-size: 26.27px;
+    }
+}
 
 .avaliacao_imagem{
     /*background-color: aquamarine;*/
     padding: 5px;
-    width: 528.12px;
+    /* width: 528.12px; */
     /*display: inline-block;*/
 }
 
 .av{
-    position: center;
+    font-family: 'Overpass', sans-serif;
+    color:#60664f;
+    margin: 0;
+    font-size: 20.77px;
+    /* width: 528.12px; */
+    text-align: center;
+    margin-bottom: 10px;
 }
+
 
 .imagem_produto{
+    display: flex;
     background-color: #cb9888;
-    width: 528.12px;
-    height: 352.08px;
-    border-radius: 5%;
+    /* width: 528.12px; */
+    /* height: 352.08px; */
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
 }
 
-.estrelas{
-    width: 15px;
-    height: 15px;
-    position: center;
-    padding-top: 10%;
-    padding-left: 1px;
-}
+
 
 .imagem_icone{
     width: 75%;
     height: 75%;
-    padding: 10%;
 }
 
 .nome_produto{
     /*background-color: #faffec;*/
-    width: 700px;
-    padding: 10px;
+    /* width: 700px; */
+    padding: 0px;
     grid-column-start: 1;
 }
 
@@ -85,64 +213,14 @@ body{
     background-color: #cb9888;
     width: 152.38px;
     height: 152.38px;
-    border-radius: 4%;
-}
-
-.produto_padrao{
-    padding: 32.9px;
-}
-
-.preco_padrao{
-    text-align: center;
-    width: 152.38px;
-}
-
-.flex_produtos{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    max-width: 100%;
-    align-items: center;
-}
-
-.teste{
-    display: inline-block;
-    line-height: 10px;
-    vertical-align: top;
-}
-
-h3{
-    font-family: 'Overpass', sans-serif;
-    font-size: 51.68px;
-    line-height: 5px;
-}
-
-.ordenar{
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 31.28px;
-    line-height: 5px;
-}
-.endereco{
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 20px;
-    line-height: 5px;
-}
-
-.nome_loja, .user, .divisao{
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 26px;
-    line-height: 5px;
+    border-radius: 21.83px;
 }
 
 .divisao{
     grid-column-start: 2;
 }
 
-.nome_produto{
-    font-family: 'Overpass', sans-serif;
-    font-size: 81.64px;
-    line-height: 5px;
-}
+
 
 .preco_comp{
     font-family: 'Overpass', sans-serif;
@@ -150,15 +228,71 @@ h3{
     line-height: 5px;
 }
 
-hr{
-    background-color:#60664f;
+.descricao{
+    display: flex;
 }
 
-/*
-.descricao{
-    display: grid;
-    grid-template-columns: repeat(3, 15vw); /*(8, 1fr)
-    grid-template-rows: repeat(1, 2vw); 
+.salvar{
+    background-color: #cb9888;
+    width: 179px;
+    height: 63px;
+    border-radius: 15.13px;
+}
+
+.p_salve{
+    color: black;
+    font-size: 27.92px;
+    text-align: right;
+    justify-content: center;
+    font-family: 'Overpass', sans-serif;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.botao_tag{
+    display: flex;
+    color: black;
+    font-weight: bold;
+    font-family: 'Overpass', sans-serif;
+    background-color: #cb9888ce;
+    width: 94.13px;
+    height: 27.88px;
+    border-radius: 6.8px;
+    margin: 22px 13.6px ;
+    justify-content: center;
     align-items: center;
 }
-*/
+
+.button{
+    background-color: #CB9888;
+    border-radius:  15.13px;
+    font-family: 'Overpass', sans-serif;
+    border-color: #CB9888;
+    border-width: 7px;
+    text-align: center;
+    display: block;
+    font-size: 27.92px;
+}
+.button:hover{
+    background-color: #dc9883;
+    border-color: #dc9883;
+    border-width: 7px;
+}
+
+.img{
+    padding-top: 2px;
+    height: 46px;
+    width: 46px;
+    vertical-align: middle;
+}
+
+.negrito{
+    font-weight: bolder;
+}
+
+.proporcao {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 21.83px;
+}
