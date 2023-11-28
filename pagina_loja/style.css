@@ -241,12 +241,10 @@ p {
     & .produto_padrao {
       display: flex;
       flex-direction: column;
+      align-items: center;
       flex-wrap: wrap;
+      align-items: center;
       /* align-items: flex-start; */
-      & .imagem_padrao {
-      width: var(--width-img-preco);
-      height: 180px;
-      }
     }
   }
   & .preco_padrao {
@@ -259,11 +257,18 @@ p {
     width: var(--width-img-preco);
     /* align-self: flex-start; */
   }
-  & .imagem_padrao {
+  & .div_imagem_padrao {
+    /* object-fit: cover; */
     background-color: #cb9888;
     width: 152.38px;
     height: 152.38px;
     border-radius: 21.83px;
+    & .imagem_padrao{
+    object-fit: cover;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    }
   }
 }
 
