@@ -152,21 +152,20 @@ def show_password():
 
 
 def submit():
-    if pwd_input.value.strip() == '' or email_input.value.strip() == '':
-        app.info("Inform", "Informe um valor de email e senha para de efetuar o login!")
-        pwd_input.value = email_input.value = ''
-    else:
-        connect = DataBase(
+    connect = DataBase(
             host=getenv('HOST', ''),
             user=getenv('USER', ''),
             password=getenv('PASSWORD', ''),
             db_name=getenv('DB_NAME', '')
         )
+    if pwd_input.value.strip() == '' or email_input.value.strip() == '':
+        app.info("Inform", "Informe um valor de email e senha para de efetuar o login!")
+        pwd_input.value = email_input.value = ''
+    else:
         rows = connect.read(fields=['email','password_hash'], table='lojas')
-        id_store = connect.read(fields=['id_loja'],table='lojas', where_fields=['email'], where_values=[email_input.value])[0][0]
         data_input = (email_input.value, pwd_input.value)
-        connect.close()
         if data_input in rows:
+            id_store = connect.read(fields=['id_loja'],table='lojas', where_fields=['email'], where_values=[email_input.value])[0][0]
             global options
             options = Window(app, width=400, height=250, bg='#EDE7DF',)
             options.when_closed = app.destroy
@@ -181,6 +180,7 @@ def submit():
         else:
             app.warn(title='Inform', text='Usuário e/ou senha inválidos')
             pwd_input.value = email_input.value = ''
+    connect.close()
 
 
 def focus_email():

@@ -334,3 +334,4 @@ pip-selfcheck.json
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,pycharm,python,venv,git
 .vscode/settings.json
+crud_folder/teste.py

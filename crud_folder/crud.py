@@ -36,7 +36,7 @@ class DataBase():
             else:
                 where_keyword = "LIKE"
                 where_range = "%"
-            where_clause = " AND ".join([" {where_keyword} ".join((i, f'"{where_range}{v}{where_range}"')) for i, v in zip(where_fields, where_values)])
+            where_clause = " AND ".join([f" {where_keyword} ".join((i, f'"{where_range}{v}{where_range}"')) for i, v in zip(where_fields, where_values)])
             query += f'WHERE {where_clause}'
         self.__cursor.execute(query)
         response = self.__cursor.fetchall()
