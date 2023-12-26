@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Loja - MePoupe</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+  <header class="cabecalho-geral">
+    <!--Perguntar sobre uso de nav e div-->
+    <nav class="cabecalho-logo">Logo</nav>
+    <nav class="cabecalho-sua-loja">
+      <a href="teste-redirecionamento/sua-loja.html">
+        <img class="cabecalho-icon" src="./assets/img/icone-sua-loja.png" alt="Ícone de loja">
+        <p class="cabecalho-texto">Sua Loja</p>
+      </a>
+    </nav>
+    <nav class="cabecalho-produtos-add">
+      <a href="teste-redirecionamento/produtos-add.html">
+        <img class="cabecalho-icon" src="./assets/img/icone-produtos-add.png" alt="Ícone de cesta de compras para produtos adicionados">
+        <p class="cabecalho-texto">Produtos Adicionados</p>
+      </a>
+    </nav>
+    
+    <nav class="cabecalho-produtos-salvos">
+      <a href="teste-redirecionamento/produtos-salvos.html">
+        <img class="cabecalho-icon" src="./assets/img/icone-produtos-salvos.png" alt="Ícone de cesta de compras para produtos salvos">
+        <p class="cabecalho-texto">Produtos Salvos</p>
+      </a>
+    </nav>
+    <nav class="cabecalho-barra-pesquisa">
+      <img class="cabecalho-icon" id="icone-lupa" src="./assets/img/icone-lupa.png" alt="Ícone de lupa">
+      <input class="barra-pesquisa" type="text" name="barra-pesquisa" id="barra-pesquisa" placeholder="Pesquise aqui">
+    </nav>
+    <nav class="cabecalho-usuario">
+      <a href=""><img class="cabecalho-icon" src="./assets/img/icone-usuario.png" alt="Ícone de usuário"></a>
+    </nav>
+  </header>
+  <hr>
+  <main>
+    <section class="secao-cima">
+      <div class="info_loja">
+        <img src="./assets/img/user_icon.svg" id="logo_loja" alt="">
+        <div class="container-dir">
+          <h1 class="titulo" id="nome_produto">Nome da Loja</h1>
+          <div class="desc_loja" id="desc_linha_1">
+            <span id="user">@nomedaloja</span>
+            <span id="divisao">•</span>
+            <span id="qtd_produtos">304 produtos</span>
+          </div>
+          <div class="desc_loja" id="desc_linha_2">
+            <span id="end_rua">Rua Fulano De Tal</span>
+            <span id="end_num">Nº 100.</span>
+            <span id="end_cidade">Florânia/RN</span>
+          </div>
+          <div class="desc_loja" id="desc_linha_3">
+            <span id="avalia_text">Avaliação: </span>
+            <div>
+              <span id="avalia_num">4,5/5</span>
+              <img id="icon_avalia" src="./assets/img/star_icon.svg" alt="Estrela avaliação">
+            </div>
+            <button class="botao_tag" id="avalia_ver">Ver Avaliações</button>
+          </div>
+          <div class="desc_loja" id="desc_linha_4">
+            <img id="icon_whatsapp" src="./assets/img/whatsapp_icon.svg" alt="Logo Whatsapp">
+            <span id="telefone">(84) 99914-3495</span>
+          </div>
+        </div>
+      </div>
+      <div class="container_promocoes">
+        <h2 class="titulo" id="titulo_promocoes">Promoções</h2>
+        <div class="promocoes">
+          <div class="item_promo" id="item_promo_1">
+            <img src="./assets/img/placeholder/promo1.jpg" alt="Item Em Promoção 1">
+            <p class="nome_padrao">Nome do Produto</p>
+            <p class="preco_padrao" id="preco_produto_2">R$ 50,00</p>
+          </div>
+          <div class="item_promo" id="item_promo_2">
+            <img src="./assets/img/placeholder/promo2.jpg" alt="Item em Promoção 2">
+            <p class="nome_padrao">Nome do Produto</p>
+            <p class="preco_padrao" id="preco_produto_2">R$ 50,00</p>
+          </div>
+          <div class="item_promo" id="item_promo_3">
+            <img src="./assets/img/placeholder/promo3.jpg" alt="Item Em Promoção 3">
+            <p class="nome_padrao">Nome do Produto</p>
+            <p class="preco_padrao" id="preco_produto_2">R$ 50,00</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="produtos">
+      <h3 class="heading" id="heading_produtos">OUTROS PRODUTOS</h3>
+      <div class="flex_ordenar">
+        <p class="ordenar">Ordenar por:</p>
+        <div class="botao_tag">
+          <p>Preço</p>
+        </div>
+        <div class="botao_tag">
+          <p>Data</p>
+        </div>
+      </div>
+      <div class="grid-produtos">
+        <div class="produto_padrao">
+          <div class="div_imagem_padrao">
+            <img src="./assets/img/placeholder/img1.jpg" alt="" class="imagem_padrao" id="imagem_produto_1">
+          </div>
+          <p class="nome_padrao">Nome do Produto</p>
+          <p class="preco_padrao" id="preco_produto_1">R$ 50,00</p>
+        </div>
+        <div class="produto_padrao">
+          <div class="div_imagem_padrao">
+            <img src="./assets/img/placeholder/img2.jpg" alt="" class="imagem_padrao" id="imagem_produto_2">
+          </div>
+          <p class="nome_padrao">Nome do Produto</p>
+          <p class="preco_padrao" id="preco_produto_2">R$ 50,00</p>
+        </div>
+        <div class="produto_padrao">
+          <div class="div_imagem_padrao">
+            <img src="./assets/img/placeholder/img3.jpg" alt="" class="imagem_padrao" id="imagem_produto_3">
+          </div>
+          <p class="nome_padrao">Nome do Produto</p>
+          <p class="preco_padrao" id="preco_produto_3">R$ 50,00</p>
+        </div>
+        <div class="produto_padrao">
+          <div class="div_imagem_padrao">
+            <img src="./assets/img/placeholder/img4.jpg" alt="" class="imagem_padrao" id="imagem_produto_4">
+          </div>
+          <p class="nome_padrao">Nome do Produto</p>
+          <p class="preco_padrao" id="preco_produto_4">R$ 50,00</p>
+        </div>
+        <div class="produto_padrao">
+          <div class="div_imagem_padrao">
+            <img src="./assets/img/placeholder/img5.jpg" alt="" class="imagem_padrao" id="imagem_produto_5">
+          </div>
+          <p class="nome_padrao">Nome do Produto</p>
+          <p class="preco_padrao" id="preco_produto_5">R$ 50,00</p>
+        </div>
+        <div class="produto_padrao">
+          <div class="div_imagem_padrao">
+            <img src="./assets/img/placeholder/img6.jpg" alt="" class="imagem_padrao" id="imagem_produto_6">
+          </div>
+          <p class="nome_padrao">Nome do Produto</p>
+          <p class="preco_padrao" id="preco_produto_6">R$ 50,00</p>
+        </div>
+        <div class="produto_padrao">
+          <div class="div_imagem_padrao">
+            <img src="./assets/img/placeholder/img7.jpg" alt="" class="imagem_padrao" id="imagem_produto_7">
+          </div>
+          <p class="nome_padrao">Nome do Produto</p>
+          <p class="preco_padrao" id="preco_produto_7">R$ 50,00</p>
+        </div>
+        <div class="produto_padrao">
+          <div class="div_imagem_padrao">
+            <img src="./assets/img/placeholder/img8.jpg" alt="" class="imagem_padrao" id="imagem_produto_8">
+          </div>
+          <p class="nome_padrao">Nome do Produto</p>
+          <p class="preco_padrao" id="preco_produto_8">R$ 50,00</p>
+        </div>
+        <div class="produto_padrao">
+          <div class="div_imagem_padrao">
+            <img src="./assets/img/placeholder/img9.jpg" alt="" class="imagem_padrao" id="imagem_produto_9">
+          </div>
+          <p class="nome_padrao">Nome do Produto</p>
+          <p class="preco_padrao" id="preco_produto_9">R$ 50,00</p>
+        </div>
+        <div class="produto_padrao">
+          <div class="div_imagem_padrao">
+            <img src="./assets/img/placeholder/img10.jpg" alt="" class="imagem_padrao" id="imagem_produto_10">
+          </div>
+          <p class="nome_padrao">Nome do Produto</p>
+          <p class="preco_padrao" id="preco_produto_10">R$ 50,00</p>
+        </div>
+        <div class="produto_padrao">
+          <div class="div_imagem_padrao">
+            <img src="./assets/img/placeholder/img11.jpg" alt="" class="imagem_padrao" id="imagem_produto_11">
+          </div>
+          <p class="nome_padrao">Nome do Produto</p>
+          <p class="preco_padrao" id="preco_produto_11">R$ 50,00</p>
+        </div>
+        <div class="produto_padrao">
+          <div class="div_imagem_padrao">
+            <img src="./assets/img/placeholder/img12.jpg" alt="" class="imagem_padrao" id="imagem_produto_12">
+          </div>
+          <p class="nome_padrao">Nome do Produto</p>
+          <p class="preco_padrao" id="preco_produto_12">R$ 50,00</p>
+        </div>
+      </div>
+    </section>
+    <section class="avaliacoes">
+      <h3 class="heading" id="avaliacoes">AVALIAÇÕES</h3>
+      <h4 class="heading" id="sua_avalia">Deixe sua avaliação!</h4>
+      <!-- <input type="text" name="input_avalia" id="input_avalia" maxlength="100"> -->
+      <textarea name="input_avalia" id="input_avalia" maxlength="200" rows="4" cols="10"></textarea>
+      <div id="nota">
+        <p>Nota: </p>
+        <div id="estrelas_avalia">
+          <img src="./assets/img/star_icon.svg" alt="Estrela 1">
+          <img src="./assets/img/star_icon.svg" alt="Estrela 2">
+          <img src="./assets/img/star_icon.svg" alt="Estrela 3">
+          <img src="./assets/img/star_icon.svg" alt="Estrela 4">
+          <img src="./assets/img/star_icon.svg" alt="Estrela 5">
+        </div>
+      </div>
+      <button id="enviar_avaliacao">Enviar</button>
+      <h3 class="heading" id="outras_avaliacoes">Outras Avaliações</h3>
+      <div class="users_avalia">
+        <div class="avaliacao" id="avalia_1">
+          <img src="./assets/img/user_icon.svg" alt="Imagem Usuário">
+          <div class="avalia_info">
+            <span class="estrelas_usuario">
+              <img src="./assets/img/star_icon.svg" alt="">
+              <img src="./assets/img/star_icon.svg" alt="">
+              <img src="./assets/img/star_icon.svg" alt="">
+              <img src="./assets/img/star_icon.svg" alt="">
+              <img src="./assets/img/star_icon.svg" alt="">
+            </span>
+            <p class="comentario_usuario">
+              Gostei bastante do produto!
+            </p>
+            <p class="nome_usuario">
+              Joaquim
+            </p>
+            <p class="data_comentario_usuario">
+              04/11/2023
+            </p>
+          </div>
+        </div>
+        <div class="avaliacao" id="avalia_2">
+          <img src="./assets/img/user_icon.svg" alt="Imagem Usuário">
+          <div class="avalia_info">
+            <span class="estrelas_usuario">
+              <img src="./assets/img/star_icon.svg" alt="">
+              <img src="./assets/img/star_icon.svg" alt="">
+              <img src="./assets/img/star_icon.svg" alt="">
+              <img src="./assets/img/star_icon.svg" alt="">
+            </span>
+            <p class="comentario_usuario">
+              O produto vale o preço.
+            </p>
+            <p class="nome_usuario">
+              Maria
+            </p>
+            <p class="data_comentario_usuario">
+              01/05/2022
+            </p>
+          </div>
+        </div>
+        <div class="avaliacao" id="avalia_3">
+          <img src="./assets/img/user_icon.svg" alt="Imagem Usuário">
+          <div class="avalia_info">
+            <span class="estrelas_usuario">
+              <img src="./assets/img/star_icon.svg" alt="">
+              <img src="./assets/img/star_icon.svg" alt="">
+            </span>
+            <p class="comentario_usuario">
+              O produto foi entregue perto do prazo de validade. Não recomendo!
+            </p>
+            <p class="nome_usuario">
+              João
+            </p>
+            <p class="data_comentario_usuario">
+              07/06/2023
+            </p>
+          </div>
+        </div>
+        <div class="avaliacao" id="avalia_4">
+          <img src="./assets/img/user_icon.svg" alt="Imagem Usuário">
+          <div class="avalia_info">
+            <span class="estrelas_usuario">
+              <img src="./assets/img/star_icon.svg" alt="">
+              <img src="./assets/img/star_icon.svg" alt="">
+              <img src="./assets/img/star_icon.svg" alt="">
+              <img src="./assets/img/star_icon.svg" alt="">
+              <img src="./assets/img/star_icon.svg" alt="">
+            </span>
+            <p class="comentario_usuario">
+              Produto excelente!
+            </p>
+            <p class="nome_usuario">
+              Renata
+            </p>
+            <p class="data_comentario_usuario">
+              15/10/2023
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="rodape-geral">
+    <img id="rodape-logo-ifrn" src="./assets/img/logo-ifrn-horizontal.png" alt="Logo Instituto Federal do Rio Grande do Norte">
+    <p id="rodape-info">
+      Sistema desenvolvido sob o aval do Instituto Federal do Rio Grande do Norte - Campus Currais Novos • © 2023. Todos os direitos reservados.
+    </p>
+  </footer>
+</body>
+
+</html>

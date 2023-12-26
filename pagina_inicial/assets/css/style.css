@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap');
+
+body {
+    background-color: #EDE7DF;
+    padding: 5px 15px;
+}
+.grid-container-produto, .grid-container-loja {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 20px ;
+    /*background-color: rgba(162, 73, 164, 0.397);*/
+    padding: 10px;
+    width: 23.2%;
+    height: 50.1%;
+    margin-bottom: 120px;
+}
+/*.grid-container:not(.title) {
+    height: 11.3%;
+    width: 23.2%;
+}*/
+
+.grid-container-produto > div:not(.title) {
+    border-radius: 10%;
+    grid-row: 3;
+}
+.grid-container-loja > div:not(.title) {
+    border-radius: 100%;
+    grid-row: 2;
+}
+.grid-container-loja > div:not(.title), .grid-container-produto > div:not(.title) {
+    background-color: #CB9888;
+    font-size: 30px;
+    text-align: center;
+    width: 84px;
+    height: 84px;
+}
+.legenda {
+    grid-row: 4;
+    text-align: center;
+    width: 84px;
+    color: #60664F;
+    font-family: "Overpass";
+    font-size: 14.483px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.grid-container-produto > .title > h2 {
+    color: #60664F;
+    font-family: 'Nunito Sans';
+    font-size: 17.321px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    grid-row: 2;
+}
+h1 {
+    color: #60664F;
+    font-family: "Overpass";
+    font-size: 48.715px;
+    font-style: normal;
+    font-weight: 700;
+    grid-row: 1;
+
+}
+.grid-container-produto > .title, .grid-container-loja > .title {
+    grid-column-start: 1;
+    grid-column-end: 30;
+    line-height: 0px;
+}
+.grid-container-loja > .title {
+    height: 62px;
+
+}
+.grid-container-produto > .title {
+    height: 81px;
+}
+/*teste de atualização*/
