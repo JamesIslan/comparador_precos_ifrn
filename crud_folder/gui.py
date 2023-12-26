@@ -113,7 +113,8 @@ def search(window,id):
         db_name=getenv('DB_NAME', '')
     )
     if search_method not in (None, ''):
-        rows = connect.read(fields='', table='produtos', where_fields=['titulo', 'id_loja'], where_values=[search_method,id])
+        rows = connect.read(fields='', table='produtos', where_fields=['titulo', 'id_loja'], where_values=[search_method,id],
+                            exact_match_attr=['titulo'])
     else:
         rows = connect.read(fields='', table='produtos', where_fields=['id_loja','titulo'], where_values=[id])
     if len(rows) == 0:
