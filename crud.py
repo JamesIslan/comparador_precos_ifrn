@@ -24,12 +24,13 @@ class DataBase():
         self.__connection.commit()
         print('Insert realizado!')
 
-    def read(self, fields: str | None, table: str | None = 'cliente', where_field: str | None = '', where_value: str | None = '') -> list:
-        if fields == '':
-            fields = '*'
-        query = f'SELECT {fields} FROM {table} '
-        if where_field:
-            query += f'WHERE {where_field} like "%{where_value}%"'
+    def read(self, fields: tuple | list = ('*',), table: str = 'cliente', where_fields: tuple | list = (), where_values: tuple | list = ()) -> list:
+        if not fields:
+            fields = ('*',)
+        query = f'SELECT {', '.join(fields)} FROM {table} '
+        if where_fields:
+            where_clause = " AND ".join([" = ".join((i, f'"{v}"')) for i, v in zip(where_fields, where_values)])
+            query += f'WHERE {where_clause}'
         self.__cursor.execute(query)
         response = self.__cursor.fetchall()
         return response
