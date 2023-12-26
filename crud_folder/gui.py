@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from guizero import (App, Box, ButtonGroup, ListBox, Picture, PushButton, Text,
                      TextBox, Window)
 
-from crud import DataBase
+from crud_folder.crud import DataBase
 
 
 def add(window, name, email, sex, phone):
