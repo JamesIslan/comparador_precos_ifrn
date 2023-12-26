@@ -24,12 +24,19 @@ class DataBase():
         self.__connection.commit()
         print('Insert realizado!')
 
-    def read(self, fields: tuple | list = ('*',), table: str = 'cliente', where_fields: tuple | list = (), where_values: tuple | list = ()) -> list:
+    def read(self, fields: tuple | list = ('*',), table: str = 'cliente', where_fields: tuple | list = (), where_values: tuple | list = (), exact_match: bool = True) -> list:
+        where_keyword = ""
+        where_range = ""
         if not fields:
             fields = ('*',)
-        query = f'SELECT {', '.join(fields)} FROM {table} '
+        query = f"SELECT {', '.join(fields)} FROM {table} "
         if where_fields:
-            where_clause = " AND ".join([" = ".join((i, f'"{v}"')) for i, v in zip(where_fields, where_values)])
+            if exact_match:
+                where_keyword = "="
+            else:
+                where_keyword = "LIKE"
+                where_range = "%"
+            where_clause = " AND ".join([" {where_keyword} ".join((i, f'"{where_range}{v}{where_range}"')) for i, v in zip(where_fields, where_values)])
             query += f'WHERE {where_clause}'
         self.__cursor.execute(query)
         response = self.__cursor.fetchall()

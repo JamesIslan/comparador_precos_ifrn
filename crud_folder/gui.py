@@ -4,11 +4,10 @@ from dotenv import load_dotenv
 from guizero import (App, Box, ButtonGroup, ListBox, Picture, PushButton, Text,
                      TextBox, Window)
 
-from crud_folder.crud import DataBase
+from crud import DataBase
 
 
 def add(window, name, email, sex, phone):
-    # connect = DataBase('localhost', 'root', '010206', 'mepoupe_db')
     connect = DataBase(
         host=getenv('HOST', ''),
         user=getenv('USER', ''),
@@ -103,10 +102,10 @@ def window_edit(connect, reg):
     window.show(wait=True)
 
 
-def search(window):
+def search(window,id):
+    print(id)
     search_method = window.question('Método de busca', "Insira o nome dos registros que deseja buscar\nou "
                                     "deixe em branco para obter todos os registros.")
-    # connect = DataBase('localhost', 'root', '010206', 'mepoupe_bd')
     connect = DataBase(
         host=getenv('HOST', ''),
         user=getenv('USER', ''),
@@ -114,16 +113,16 @@ def search(window):
         db_name=getenv('DB_NAME', '')
     )
     if search_method not in (None, ''):
-        rows = connect.read(fields='', table='cliente', where_fields='nome', where_values=search_method)
+        rows = connect.read(fields='', table='produtos', where_fields=['titulo', 'id_loja'], where_values=[search_method,id])
     else:
-        rows = connect.read(fields='', table='cliente')
+        rows = connect.read(fields='', table='produtos', where_fields=['id_loja','titulo'], where_values=[id])
     if len(rows) == 0:
         window.info("Info", "Sua busca não resultou em nenhum registro!")
     else:
         result_search = []
         for reg in rows:
-            result_search.append({'id_cliente': reg[0], 'nome': reg[1],
-                                 'email': reg[2], 'sexo': reg[3], 'telefone': reg[4]})
+            result_search.append({'id_produto': reg[0], 'id_loja': reg[1],
+                                 'descricao': reg[2], 'valor': reg[3], 'titulo': reg[4]})
         global window_search_result
         window_search_result = Window(window, width=580, height=345, title='Resultados da busca')
         window_search_result.bg = '#EDE7DF'
@@ -144,11 +143,11 @@ def search(window):
 
 
 def show_password():
-    if pwd_show.image == 'img/senha_nao_visivel.png/':
-        pwd_show.image = 'img/senha_visivel.png/'
+    if pwd_show.image == 'crud_folder/img/senha_nao_visivel.png/':
+        pwd_show.image = 'crud_folder/img/senha_visivel.png/'
         pwd_input.hide_text = False
     else:
-        pwd_show.image = 'img/senha_nao_visivel.png/'
+        pwd_show.image = 'crud_folder/img/senha_nao_visivel.png/'
         pwd_input.hide_text = True
 
 
@@ -163,7 +162,8 @@ def submit():
             password=getenv('PASSWORD', ''),
             db_name=getenv('DB_NAME', '')
         )
-        rows = connect.read(fields='email,password_hash', table='lojas')
+        rows = connect.read(fields=['email','password_hash'], table='lojas')
+        id_store = connect.read(fields=['id_loja'],table='lojas', where_fields=['email'], where_values=[email_input.value])[0][0]
         data_input = (email_input.value, pwd_input.value)
         connect.close()
         if data_input in rows:
@@ -174,7 +174,7 @@ def submit():
             options.tk.resizable(0, 0)
             ghost_box = Box(box_options, grid=[0, 0], width=10)
             button_add = PushButton(box_options, text="Adicionar", command=window_add, grid=[1, 0])
-            button_search = PushButton(box_options, text="Buscar", command=search, grid=[2, 0], args=[options])
+            button_search = PushButton(box_options, text="Buscar", command=search, grid=[2, 0], args=[options,id_store])
             button_add.bg = button_search.bg = 'white'
             app.hide()
             options.show()
@@ -204,7 +204,7 @@ pwd_text = Text(box_info, text="Senha:", grid=[0, 1], size=15, font='Times')
 pwd_text.when_clicked = focus_password
 pwd_input = TextBox(box_info, hide_text=True, grid=[1, 1], width='fill')
 pwd_input.bg = 'white'
-pwd_show = Picture(box_info, image="img/senha_nao_visivel.png/", grid=[2, 1])
+pwd_show = Picture(box_info, image="crud_folder/img/senha_nao_visivel.png/", grid=[2, 1])
 pwd_show.when_clicked = show_password
 ghost_box_2 = Box(box_info, grid=[1, 2], height=15, width=1)
 button_submit = PushButton(box_info, text="Fazer login", grid=[1, 3], width='13', command=submit)
