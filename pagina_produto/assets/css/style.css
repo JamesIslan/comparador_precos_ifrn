@@ -1,0 +1,300 @@
+:root {
+    --width-img-preco: 180px;
+    --site-font: 'Overpass', sans-serif;
+    --highlight-color-1: #d1a698;
+    --highlight-color-2: #cb9888;
+    --highlight-color-3: #dc9883;
+    --background-color: #ede7df;
+    --green-text-color: #60664f;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background-color);
+    font-family: var(--site-font);
+}
+
+h1, h2, h3, p, span{
+    color: var(--green-text-color);
+}
+
+p{
+    margin:0;
+}
+
+/*Cabeçalho*/
+
+/*/Cabeçalho*/
+
+.secao_cima{
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    margin-bottom: 60px;
+    width: 1100px;
+    justify-content: center;
+    & .container_esq{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        & .avaliacao{
+            align-self: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 15px;
+            & span{
+                font-size: 21px;
+            }
+            & .pri_linha{
+                display: inline-flex;
+                justify-content: center;
+                & *{
+                    margin: 0;
+                    padding: 0;
+                }
+                & span{
+                    margin: 3px 10px 0 0;
+                }
+            }
+        }
+        & .estrelas{
+            width: 23.48px;
+            height: 23.48px;
+            position: center;
+            padding-left: 1px;
+            padding-top: 8px;
+        }
+        & .container_produto{
+            display: flex;
+            background-color: var(--highlight-color-1);
+            width: 375px;
+            height: 250px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            margin-bottom: 7%;
+        }
+        & img#produto {
+            width: 240px;
+        }
+    }
+    & .container_dir{
+        position: relative;
+        top: 75px;
+        & h1#nome_produto{
+            margin:0;
+            font-size: 4.5rem;
+        }
+        & h2#preco_comp{
+            margin: 0;
+            font-size: 5rem;
+        }
+        & span#user + span{
+            display: block;
+        }
+        & .flex_comparador{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            gap: 2vw;
+        }
+        & hr{
+            background-color: var(--green-text-color);
+            margin-top: 0;
+            margin-bottom: 6%;
+        }
+        & .p_comparar{
+            color:var(--green-text-color);
+            justify-content: center;
+            text-align: center;
+            padding: 5px;
+            font-size: 32.45px;
+        }
+        & button#botao_comparar{
+            height: 72px;
+            width: 45%;
+            border-radius: 15.13px;
+        }
+        & span{
+            font-size: 26px;
+        }
+    }
+}
+
+.secao_baixo{
+    width: 940px;
+    & h3#heading_produtos{
+        font-family: var(--site-font);
+        font-size: 4rem;
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+    & .produtos{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    & .flex_ordenar{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        & .ordenar{
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 31.28px;
+            position: relative;
+            top: -3px;
+        }
+    }
+    & .grid_produtos{
+        display: grid;
+        grid-template-rows: repeat(3, 1.5fr);
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 3%;
+        width: 100%;
+        & .produto_padrao{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            & .imagem_padrao{
+                width: 180px;
+                height: 180px;
+            }
+        }
+    }
+    & .preco_padrao{
+        font-family: var(--site-font);
+        font-weight: bold;
+        text-align: center;
+        padding-top: 11px;
+        width: 152.38px;
+        font-size: 26.27px;
+    }
+}
+
+.avaliacao_imagem{
+    padding: 5px;
+}
+
+.av{
+    font-family: var(--site-font);
+    color: var(--green-text-color);
+    margin: 0;
+    font-size: 20.77px;
+    /* width: 528.12px; */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.imagem_produto{
+    display: flex;
+    background-color: var(--highlight-color-2);
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagem_icone{
+    width: 75%;
+    height: 75%;
+}
+
+.nome_produto{
+    padding: 0px;
+    grid-column-start: 1;
+}
+
+.imagem_padrao{
+    background-color: var(--highlight-color-2);
+    width: 152.38px;
+    height: 152.38px;
+    border-radius: 21.83px;
+}
+
+.divisao{
+    grid-column-start: 2;
+}
+
+
+
+.preco_comp{
+    font-family: var(--site-font);
+    font-size: 81.64px;
+    line-height: 5px;
+}
+
+.descricao{
+    display: flex;
+}
+
+.salvar{
+    background-color: var(--highlight-color-2);
+    width: 179px;
+    height: 63px;
+    border-radius: 15.13px;
+}
+
+.p_salve{
+    color: black;
+    font-size: 27.92px;
+    text-align: right;
+    justify-content: center;
+    font-family: var(--site-font);
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.botao_tag{
+    display: flex;
+    color: black;
+    font-weight: bold;
+    font-family: var(--site-font);
+    background-color: #cb9888ce;
+    width: 94.13px;
+    height: 27.88px;
+    border-radius: 6.8px;
+    margin: 22px 13.6px ;
+    justify-content: center;
+    align-items: center;
+}
+
+.button{
+    background-color: var(--highlight-color-2);
+    border-radius:  15.13px;
+    font-family: var(--site-font);
+    border-color: var(--highlight-color-2);
+    border-width: 7px;
+    text-align: center;
+    display: block;
+    font-size: 27.92px;
+}
+.button:hover{
+    background-color: var(--highlight-color-3);
+    border-color: var(--highlight-color-3);
+    border-width: 7px;
+}
+
+.img{
+    padding-top: 2px;
+    height: 46px;
+    width: 46px;
+    vertical-align: middle;
+}
+
+.negrito{
+    font-weight: bolder;
+}
+
+.proporcao {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 21.83px;
+}
