@@ -3,17 +3,17 @@
 :root {
   --width-img-preco: 180px;
   --site-font: 'Overpass', sans-serif;
-  --highlight-color: #d1a698;
+  --highlight-color-1: #d1a698;
+  --highlight-color-2: #CB9888;
+  --highlight-color-3: #dc9883;
+  --background-color: #ede7df;
+  --green-text-color: #60664f;
 }
-html {
-  font-size: 10px;
-}
+
+html {font-size: 62.5%;}
+
 body {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* align-items: center; */
-  /* justify-content: flex-start; */
-  background-color: #ede7df;
+  background-color: var(--background-color);
   font-family: var(--site-font);
   margin: 0;
 }
@@ -21,29 +21,19 @@ body {
 /*Header*/
 .cabecalho-geral{
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin: 3px 10px;
-}
-
-.cabecalho-geral > nav{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 20px;
-  font-family: 'Overpass';
-  color: #60664f;
-}
-
-.cabecalho-geral > nav > a{
-  display: inherit;
-  flex-direction: inherit;
-  align-items: inherit;
-  gap: inherit;
-  font-family: inherit;
-  color: inherit;
-  text-decoration: none;
+  & > nav, nav > a{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-family: var(--site-font);
+    color: var(--green-text-color);
+    & > a{
+      text-decoration: none;
+    }
+  }
 }
 
 nav > img#icone-lupa{
@@ -70,21 +60,17 @@ nav > img#icone-lupa{
   border-radius: 15px;
   width: 380px;
   height: 30px;
-  background-color: #CB9888;
+  background-color: var(--highlight-color-2);
   font-family: inherit;
   font-size: 20px;
   padding-left: 20px;
-}
-
-::placeholder{
-  color: #60664F;
 }
 
 hr{
   height: 5px;
   width: 100%;
   border: 0px;
-  background-color: #60664F;
+  background-color: var(--green-text-color);
   border-radius: 3px;
   margin: 0 0 50px 0;
 }
@@ -96,9 +82,10 @@ main {
   margin: 0 auto;
 }
 
-h1, h2, h3, h4, p, span {
-  color: #60664f;
+h1, h2, h3, h4, p, span, ::placeholder {
+  color: var(--green-text-color);
 }
+
 p {
   margin: 0;
 }
@@ -108,30 +95,23 @@ h2#titulo_promocoes{
 }
 
 .button {
-  background-color: var(--highlight-color);
+  background-color: var(--highlight-color-1);
   border-radius: 15.13px;
   font-family: var(--site-font);
-  border-color: var(--highlight-color);
+  border-color: var(--highlight-color-1);
   border-width: 7px;
   text-align: center;
   display: block;
   font-size: 27.92px;
 }
 .button:hover {
-  background-color: #dc9883;
-  border-color: #dc9883;
+  background-color: var(--highlight-color-3);
+  border-color: var(--highlight-color-3);
   border-width: 7px;
-}
-.img {
-  padding-top: 2px;
-  height: 46px;
-  width: 46px;
-  vertical-align: middle;
 }
 
 .secao-cima {
   display: flex;
-  flex-direction: row;
   width: 100%;
   & .titulo {
   margin: 0;
@@ -139,7 +119,6 @@ h2#titulo_promocoes{
   }
   & .info_loja {
   display: flex;
-  flex-direction: row;
   column-gap: 20px;
   align-items: flex-start;
   flex-basis: 50%;
@@ -188,7 +167,6 @@ h2#titulo_promocoes{
     }
     & .desc_loja {
   display: flex;
-  flex-direction: row;
   align-items: center;
   font-size: 2rem;
   gap: 10px;
@@ -224,27 +202,24 @@ h2#titulo_promocoes{
     }
     & .flex-comparador {
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
   align-items: center;
   gap: 2vw;
     }
-    &
-  hr {
-      background-color: #60664f;
+    & hr{background-color: var(--green-text-color);
   margin-top: 0;
   margin-bottom: 6%;
     }
     & .p_comparar {
-  color: #60664f;
-  justify-content: center;
-  text-align: center;
-  padding: 5px;
-  font-size: 32.45px;
+        color: var(--green-text-color);
+        justify-content: center;
+        text-align: center;
+        padding: 5px;
+        font-size: 32.45px;
     }
     &
   button#botao_comparar {
-      background-color: var(--highlight-color);
+      background-color: var(--highlight-color-1);
   height: 72px;
   width: 45%;
   border-radius: 15.13px;
@@ -317,7 +292,6 @@ h2#titulo_promocoes{
 
 .flex_ordenar {
   display: flex;
-  flex-direction: row;
   align-items: center;
   & .ordenar {
     font-family: var(--site-font);
@@ -368,7 +342,7 @@ h2#titulo_promocoes{
 }
 .div_imagem_padrao {
   /* object-fit: cover; */
-  background-color: var(--highlight-color);
+  background-color: var(--highlight-color-1);
   /* width: 152.38px; */
   /* height: 152.38px; */
   width: 230px;
@@ -418,7 +392,7 @@ textarea#input_avalia {
 }
 
 textarea#input_avalia, button#enviar_avaliacao {
-  background-color: var(--highlight-color);
+  background-color: var(--highlight-color-1);
   border: none;
   padding: 5px;
   border-radius: 10px;
@@ -427,7 +401,6 @@ textarea#input_avalia, button#enviar_avaliacao {
 }
 div#nota {
   display: flex;
-  flex-direction: row;
   column-gap: 10px;
   margin: 10px 0;
   & p {
@@ -438,7 +411,6 @@ div#nota {
 
 div#estrelas_avalia {
   display: flex;
-  flex-direction: row;
   position: relative;
   bottom: 2px;
 }
@@ -447,10 +419,10 @@ button#enviar_avaliacao {
   width: 130px;
   height: 40px;
   font-size: 2rem;
-  color: #60664f;
+  color: var(--green-text-color);
   font-weight: 600;
   &:hover {
-    background-color: var(--highlight-color);
+    background-color: var(--highlight-color-1);
   }
   &:active {
     transform: translateY(4px);
@@ -469,13 +441,12 @@ h3#outras_avaliacoes {
   margin-bottom: 100px;
   & .avaliacao {
     display: flex;
-    flex-direction: row;
     align-items: center;
     gap: 10px;
     padding: 10px 5px;
     width: 293px;
     height: 100px;
-    background-color: var(--highlight-color);
+    background-color: var(--highlight-color-1);
     border-radius: 10px;
     &>img {
       width: 70px;
@@ -504,7 +475,6 @@ h3#outras_avaliacoes {
 /*Footer*/
 .rodape-geral{
   display: flex;
-  flex-direction: row;
   height: 60px;
   justify-content: center;
   align-items: center;
@@ -518,8 +488,8 @@ h3#outras_avaliacoes {
 }
 
 .rodape-geral #rodape-info{
-  color: #EDE7DF;
-  font-family: "Overpass";
+  color: var(--background-color);
+  font-family: var(--site-font);
   font-size: 18px;
   margin: 0px;
 }
