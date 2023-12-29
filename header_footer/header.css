@@ -1,75 +1,79 @@
-@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@200;300;400;500&display=swap");
 
-body{
-  margin: 0px;
+:root {
+  --width-img-preco: 180px;
+  --site-font: "Overpass", sans-serif;
+  --highlight-color-1: #d1a698;
+  --highlight-color-2: #cb9888;
+  --highlight-color-3: #dc9883;
+  --background-color: #ede7df;
+  --green-text-color: #60664f;
 }
 
-.cabecalho-geral{
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: var(--site-font);
+  margin: 0;
+}
+
+/*Header*/
+.cabecalho-geral {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin: 3px 10px;
+  & > nav,
+  nav > a {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-family: var(--site-font);
+    color: var(--green-text-color);
+    & > a {
+      text-decoration: none;
+    }
+  }
 }
 
-.cabecalho-geral > nav{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 20px;
-  font-family: 'Overpass';
-  color: #60664f;
-}
-
-.cabecalho-geral > nav > a{
-  display: inherit;
-  flex-direction: inherit;
-  align-items: inherit;
-  gap: inherit;
-  font-family: inherit;
-  color: inherit;
-  text-decoration: none;
-}
-
-nav > img#icone-lupa{
+nav > img#icone-lupa {
   width: 35px;
 }
 
-.cabecalho-logo{
-  font-size: 30px;
+.cabecalho-logo {
+  font-size: 3rem;
 }
 
-.cabecalho-icon{
+.cabecalho-icon {
   display: inline;
-  width: 40px;
+  width: 4rem;
 }
 
-.cabecalho-texto{
+.cabecalho-texto {
   display: inline;
   font-size: 25px;
   margin: 0;
 }
 
-.barra-pesquisa{
+.barra-pesquisa {
   border: none;
   border-radius: 15px;
-  width: 380px;
-  height: 30px;
-  background-color: #CB9888;
+  width: 38rem;
+  height: 3rem;
+  background-color: var(--highlight-color-2);
   font-family: inherit;
-  font-size: 20px;
-  padding-left: 20px;
+  font-size: 2rem;
+  padding-left: 2rem;
 }
 
-::placeholder{
-  color: #60664F;
-}
-
-hr{
+hr {
   height: 5px;
   width: 100%;
   border: 0px;
-  background-color: #60664F;
+  background-color: var(--green-text-color);
   border-radius: 3px;
-  margin: 0px;
+  margin: 0 0 5rem 0;
 }
