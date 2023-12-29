@@ -2,16 +2,19 @@ import mysql.connector as connector
 
 
 class DataBase():
-    def __init__(self, host: str, user: str, password: str, db_name: str):
+    def __init__(self, host: str, user: str, password: str, db_name: str,db_port:str):
         self.host = host
         self.user = user
         self.password = password
         self.db_name = db_name
+        self.db_port = db_port
         self.__connection = connector.connect(
             host=self.host,
             user=self.user,
             password=self.password,
             database=self.db_name,
+            port=self.db_port,
+            ssl_disabled = True
         )
         self.__cursor = self.__connection.cursor(buffered=True)
 

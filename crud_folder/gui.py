@@ -103,20 +103,20 @@ def window_edit(connect, reg):
 
 
 def search(window,id):
-    print(id)
     search_method = window.question('Método de busca', "Insira o nome dos registros que deseja buscar\nou "
                                     "deixe em branco para obter todos os registros.")
     connect = DataBase(
         host=getenv('HOST', ''),
         user=getenv('USER', ''),
         password=getenv('PASSWORD', ''),
-        db_name=getenv('DB_NAME', '')
+        db_name=getenv('DB_NAME', ''),
+        db_port =getenv('PORT',)
     )
     if search_method not in (None, ''):
         rows = connect.read(fields='', table='produtos', where_fields=['titulo', 'id_loja'], where_values=[search_method,id],
                             exact_match_attr=['titulo'])
     else:
-        rows = connect.read(fields='', table='produtos', where_fields=['id_loja','titulo'], where_values=[id])
+        rows = connect.read(fields='', table='produtos', where_fields=['id_loja'], where_values=[id])
     if len(rows) == 0:
         window.info("Info", "Sua busca não resultou em nenhum registro!")
     else:
@@ -157,7 +157,8 @@ def submit():
             host=getenv('HOST', ''),
             user=getenv('USER', ''),
             password=getenv('PASSWORD', ''),
-            db_name=getenv('DB_NAME', '')
+            db_name=getenv('DB_NAME', ''),
+            db_port=getenv('PORT', )
         )
     if pwd_input.value.strip() == '' or email_input.value.strip() == '':
         app.info("Inform", "Informe um valor de email e senha para de efetuar o login!")
