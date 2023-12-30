@@ -151,7 +151,7 @@ h2#titulo_promocoes {
     padding: 5px;
     font-size: 3.2rem;
   }
-  & button#botao_comparar {
+  & #botao_comparar {
     background-color: var(--highlight-color-1);
     height: 7.2rem;
     width: 45%;
