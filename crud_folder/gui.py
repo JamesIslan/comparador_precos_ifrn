@@ -54,23 +54,22 @@ def remove(connection, reg):
 
 
 def window_add():
-    window = Window(app, width=400, height=250, layout='grid')
+    window = Window(app, width=400, height=250)
     window.bg = '#EDE7DF'
-    text_name = Text(window, text='Nome:', grid=[0, 0])
-    input_name = TextBox(window, grid=[1, 0], width=20)
-    sex_name = Text(window, text='  Sexo:', grid=[2, 0])
-    sex_input = ButtonGroup(window, options=['m', 'f'], selected='m', grid=[3, 0], horizontal=True)
-    ghost_box = Box(window, height='20', grid=[0, 1])
-    text_email = Text(window, text='Email:', grid=[0, 2])
-    input_email = TextBox(window, grid=[1, 2], width=20)
-    phone_text = Text(window, text='   Telefone:', grid=[2, 2])
-    phone_input = TextBox(window, grid=[3, 2], width=20)
-    ghost_box_3 = Box(window, grid=[0, 3], height=50)
-    button = PushButton(window, grid=[2, 4], text="Cadastrar", command=add, args=[
-                        window, input_name, input_email, sex_input, phone_input])
-    text_name.font = sex_name.font = text_email.font = phone_text.font = button.font = 'Calibri'
-    input_name.bg = input_email.bg = phone_input.bg = 'white'
-    button.bg = '#CB9888'
+    box_inputs = Box(window,layout='grid',width='fill')
+    text_title = Text(box_inputs, text='Título:', grid=[0, 0])
+    input_title = TextBox(box_inputs, grid=[1, 0], width=20)
+    text_value = Text(box_inputs, text='Valor:', grid=[2, 0])
+    value_input =TextBox(box_inputs,grid=[3,0],width=20)
+    ghost_box = Box(window, height='20', width='fill')
+    box_descriptions = Box(window,width='fill',height=100)
+    description = TextBox(box_descriptions,width='fill', height=100,multiline=True, text="Descrição do produto")
+    ghost_box_3 = Box(window,height=50,width='fill')
+    #button = PushButton(window, grid=[2, 4], text="Cadastrar", command=add, args=[
+     #                   window, input_title, value_input])
+    #text_title.font = text_value.font = button.font = 'Calibri'
+    input_title.bg = value_input.bg = description.bg =  'white'
+    #button.bg = '#CB9888'
     window.tk.resizable(0, 0)
     window.show(wait=True)
 
@@ -105,6 +104,8 @@ def window_edit(connect, reg):
 def search(window,id):
     search_method = window.question('Método de busca', "Insira o nome dos registros que deseja buscar\nou "
                                     "deixe em branco para obter todos os registros.")
+    if search_method is None:
+        return
     connect = DataBase(
         host=getenv('HOST', ''),
         user=getenv('USER', ''),
@@ -113,7 +114,7 @@ def search(window,id):
         db_port =getenv('PORT',)
     )
     if search_method not in (None, ''):
-        rows = connect.read(fields='', table='produtos', where_fields=['titulo', 'id_loja'], where_values=[search_method,id],
+        rows = connect.read(fields='', table='produtos', where_fields=['titulo', 'id_loja'], where_values=[search_method.lower(),id],
                             exact_match_attr=['titulo'])
     else:
         rows = connect.read(fields='', table='produtos', where_fields=['id_loja'], where_values=[id])
@@ -123,7 +124,7 @@ def search(window,id):
         result_search = []
         for reg in rows:
             result_search.append({'id_produto': reg[0], 'id_loja': reg[1],
-                                 'descricao': reg[2], 'valor': reg[3], 'titulo': reg[4]})
+                                 'valor': reg[3], 'titulo': reg[4],'descricao': reg[2]})
         global window_search_result
         window_search_result = Window(window, width=580, height=345, title='Resultados da busca')
         window_search_result.bg = '#EDE7DF'
