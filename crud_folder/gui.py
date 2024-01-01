@@ -30,9 +30,15 @@ def add(window,id,title, value, description):
     elif checked_number is None:
         window.info(title='info', text='Informe um valor númerico válido!')
     else:
-        connect.create('produtos', fields=['id_loja','titulo', 'valor', 'descricao'], values=[
-            id,title.value, checked_number, description.value.replace('\n','')
+        description = description.value.replace('\n','')
+        if description == "Descrição do produto":
+            connect.create('produtos', fields=['id_loja','titulo', 'valor'], values=[
+            id,title.value, checked_number
         ])
+        else:
+            connect.create('produtos', fields=['id_loja','titulo', 'valor', 'descricao'], values=[
+                id,title.value, checked_number, description
+            ])
         connect.close()
         window.destroy() 
 
