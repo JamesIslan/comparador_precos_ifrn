@@ -18,7 +18,7 @@ class DataBase():
         )
         self.__cursor = self.__connection.cursor(buffered=True)
 
-    def create(self, table: str, fields: list, values: list) -> None:
+    def create(self, table: str, fields: list, values: list,) -> None:
         query = (
             f'INSERT INTO {table}({(",").join(fields)}) '
             f'VALUES({", ".join(["%s"] * len(fields))})'

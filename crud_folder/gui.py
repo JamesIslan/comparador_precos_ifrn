@@ -6,22 +6,35 @@ from guizero import (App, Box, ButtonGroup, ListBox, Picture, PushButton, Text,
 
 from crud import DataBase
 
+def check_number(valor):
+    value_str = valor.replace(',', '.')
+    try:
+        float(value_str)
+    except Exception:
+        return
+    else:
+        return value_str
+    
 
-def add(window, name, email, sex, phone):
+def add(window,id,title, value, description):
     connect = DataBase(
         host=getenv('HOST', ''),
         user=getenv('USER', ''),
         password=getenv('PASSWORD', ''),
-        db_name=getenv('DB_NAME', '')
+        db_name=getenv('DB_NAME', ''),
+        db_port=getenv('PORT', )
     )
-    if '' in (name.value, email.value, sex.value, phone.value):
+    checked_number = check_number(value.value)
+    if '' in (title.value, value.value, description.value):
         window.info(title='info', text='Informe valores para todos os atributos!')
+    elif checked_number is None:
+        window.info(title='info', text='Informe um valor númerico válido!')
     else:
-        connect.create('cliente', fields=['nome', 'email', 'sexo', 'telefone'], values=[
-            name.value, email.value, sex.value, phone.value
+        connect.create('produtos', fields=['id_loja','titulo', 'valor', 'descricao'], values=[
+            id,title.value, checked_number, description.value.replace('\n','')
         ])
         connect.close()
-        window.destroy()
+        window.destroy() 
 
 
 def edit(window, connection, reg, new_reg):
@@ -53,7 +66,7 @@ def remove(connection, reg):
     close_window_search()
 
 
-def window_add():
+def window_add(id):
     window = Window(app, width=400, height=250)
     window.bg = '#EDE7DF'
     box_inputs = Box(window,layout='grid',width='fill')
@@ -65,11 +78,11 @@ def window_add():
     box_descriptions = Box(window,width='fill',height=100)
     description = TextBox(box_descriptions,width='fill', height=100,multiline=True, text="Descrição do produto")
     ghost_box_3 = Box(window,height=50,width='fill')
-    #button = PushButton(window, grid=[2, 4], text="Cadastrar", command=add, args=[
-     #                   window, input_title, value_input])
-    #text_title.font = text_value.font = button.font = 'Calibri'
+    button = PushButton(window, text="Cadastrar", command=add, args=[
+                window,id, input_title, value_input, description])
+    text_title.font = text_value.font = button.font = 'Calibri'
     input_title.bg = value_input.bg = description.bg =  'white'
-    #button.bg = '#CB9888'
+    button.bg = '#CB9888'
     window.tk.resizable(0, 0)
     window.show(wait=True)
 
@@ -175,7 +188,7 @@ def submit():
             box_options = Box(options, layout='grid')
             options.tk.resizable(0, 0)
             ghost_box = Box(box_options, grid=[0, 0], width=10)
-            button_add = PushButton(box_options, text="Adicionar", command=window_add, grid=[1, 0])
+            button_add = PushButton(box_options, text="Adicionar", command=window_add, grid=[1, 0],args=[id_store])
             button_search = PushButton(box_options, text="Buscar", command=search, grid=[2, 0], args=[options,id_store])
             button_add.bg = button_search.bg = 'white'
             app.hide()
