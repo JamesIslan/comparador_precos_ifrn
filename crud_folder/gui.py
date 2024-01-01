@@ -67,7 +67,7 @@ def remove(connection, reg):
         registry_remove = eval(reg.value)
     except TypeError:
         return
-    connection.delete('cliente', 'id_cliente', registry_remove['id_cliente'])
+    connection.delete('produtos', 'id_produto', registry_remove['id_produto'])
     connection.close()
     close_window_search()
 
