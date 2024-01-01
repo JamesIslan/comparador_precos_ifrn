@@ -1,79 +1,151 @@
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap');
 
+:root {
+  --width-img-preco: 180px;
+  --site-font: "Overpass", sans-serif;
+  --site-font-2: "Nunito Sans", sans-serif;
+  --highlight-color-1: #d1a89a;
+  --highlight-color-2: #cb9888;
+  --highlight-color-3: #dc9883;
+  --background-color: #ede7df;
+  --green-text-color: #60664f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
 body {
-    background-color: #EDE7DF;
-    padding: 5px 15px;
+  background-color: var(--background-color);
+  padding: clamp(2rem, 5vw, 5rem)
 }
-.grid-container-produto, .grid-container-loja {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    gap: 20px ;
-    /*background-color: rgba(162, 73, 164, 0.397);*/
-    padding: 10px;
-    width: 23.2%;
-    height: 50.1%;
-    margin-bottom: 120px;
-}
-/*.grid-container:not(.title) {
-    height: 11.3%;
-    width: 23.2%;
-}*/
 
-.grid-container-produto > div:not(.title) {
-    border-radius: 10%;
-    grid-row: 3;
+section{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: clamp(5rem,5vw,12rem);
 }
-.grid-container-loja > div:not(.title) {
-    border-radius: 100%;
-    grid-row: 2;
-}
-.grid-container-loja > div:not(.title), .grid-container-produto > div:not(.title) {
-    background-color: #CB9888;
-    font-size: 30px;
-    text-align: center;
-    width: 84px;
-    height: 84px;
-}
-.legenda {
-    grid-row: 4;
-    text-align: center;
-    width: 84px;
-    color: #60664F;
-    font-family: "Overpass";
-    font-size: 14.483px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-.grid-container-produto > .title > h2 {
-    color: #60664F;
-    font-family: 'Nunito Sans';
-    font-size: 17.321px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    grid-row: 2;
-}
-h1 {
-    color: #60664F;
-    font-family: "Overpass";
-    font-size: 48.715px;
-    font-style: normal;
-    font-weight: 700;
-    grid-row: 1;
 
+.titulo, .nome_padrao, .preco_padrao{
+  font-family: var(--site-font);
 }
-.grid-container-produto > .title, .grid-container-loja > .title {
-    grid-column-start: 1;
-    grid-column-end: 30;
-    line-height: 0px;
-}
-.grid-container-loja > .title {
-    height: 62px;
 
+.titulo {
+  font-size: clamp(1.8rem,5vw,4.8rem)
 }
-.grid-container-produto > .title {
-    height: 81px;
+
+.subtitulo {
+  font-family: var(--site-font-2);
+  font-size: clamp(1.7rem,3.5vw,2.5rem);
+  margin-bottom: 2rem;
 }
-/*teste de atualização*/
+
+.grid_produtos {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: 2rem;
+  column-gap: 0;
+  width: 100%;
+  height: auto;
+  justify-content: start;
+  justify-items: start;
+}
+
+.produto_padrao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nome_padrao {
+  text-align: center;
+  margin-top: 0.5rem;
+  /* font-size: clamp(1.7rem, 1.8vw, 2.3rem); */
+  font-size: clamp(1.4rem, 1vw, 2rem);
+}
+
+.preco_padrao {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.8rem;
+  width: var(--width-img-preco);
+}
+
+.div_imagem_padrao {
+  display: flex;
+  justify-content: center;
+  width: clamp(90%, 20vw, 80%);
+  & .imagem_padrao {
+    object-fit: cover;
+    width: inherit;
+    height: inherit;
+    aspect-ratio: 1;
+    border-radius: 1rem;
+  }
+}
+
+#titulo_lojas_proximas{
+  margin-bottom: 2rem;
+}
+
+.grid_lojas{
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: 2rem;
+  column-gap: 0;
+  width: 100%;
+  height: auto;
+  justify-content: start;
+  justify-items: start;
+}
+
+.loja_padrao{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: clamp(90%, 20vw, 80%);
+  & .loja_img {
+    object-fit: cover;
+    width: inherit;
+    height: inherit;
+    aspect-ratio: 1;
+    border-radius: 50%;
+  }
+}
+
+/*Media Queries*/
+
+@media screen and (max-width: 1000px) {
+  .grid_produtos, .grid_lojas{
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .grid_produtos, .grid_lojas{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .grid_produtos, .grid_lojas{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .grid_produtos, .grid_lojas{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
