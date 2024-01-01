@@ -44,14 +44,14 @@ def add(window,id,title, value, description):
 
 
 def edit(window, connection, reg, new_reg):
-    reg_modified = {'nome': new_reg[0].value, 'email': new_reg[1].value,
-                    'sexo': new_reg[2].value, 'telefone': new_reg[3].value}
+    reg_modified = {'titulo': new_reg[0].value, 'valor': new_reg[1].value,
+                    'descricao': new_reg[2].value.replace('\n','')}
     changed_values = [(k, v) for k, v in reg_modified.items() if not reg[k] == v]
     for key in reg.keys():
-        if key == 'id_cliente':
+        if key in ('id_produto', 'id_loja'):
             pass
         else:
-            connection.update('cliente', key, reg_modified[key], 'id_cliente', reg['id_cliente'])
+            connection.update('produtos', key, reg_modified[key], 'id_produto', reg['id_produto'])
     connection.close()
     window.destroy()
     close_window_search()
@@ -99,22 +99,21 @@ def window_edit(connect, reg):
     except TypeError:
         return
 
-    window = Window(app, width=400, height=250, layout='grid')
+    window = Window(app, width=400, height=250)
     window.bg = '#EDE7DF'
-    text_name = Text(window, text='Nome:', grid=[0, 0])
-    name = TextBox(window, grid=[1, 0], width=20, text=reg_dict['nome'])
-    sex_name = Text(window, text='  Sexo:', grid=[2, 0])
-    sex = ButtonGroup(window, options=['m', 'f'], selected=reg_dict['sexo'], grid=[3, 0], horizontal=True)
-    ghost_box = Box(window, height='20', grid=[0, 1])
-    text_email = Text(window, text='Email:', grid=[0, 2])
-    email = TextBox(window, grid=[1, 2], width=20, text=reg_dict['email'])
-    phone_text = Text(window, text='   Telefone:', grid=[2, 2])
-    phone = TextBox(window, grid=[3, 2], width=20, text=reg_dict['telefone'])
-    ghost_box_3 = Box(window, grid=[0, 3], height=50)
-    new_reg = [name, email, sex, phone]
+    box_inputs = Box(window,layout='grid',width='fill')
+    text_title = Text(box_inputs, text='Título:', grid=[0, 0])
+    input_title = TextBox(box_inputs, grid=[1, 0], width=20,text=reg_dict['titulo'])
+    text_value = Text(box_inputs, text='Valor:', grid=[2, 0])
+    value_input =TextBox(box_inputs,grid=[3,0],width=20,text=reg_dict['valor'])
+    ghost_box = Box(window, height='20', width='fill')
+    box_descriptions = Box(window,width='fill',height=100)
+    description = TextBox(box_descriptions,width='fill', height=100,multiline=True, text=reg_dict['descricao'])
+    ghost_box_3 = Box(window,height=50,width='fill')
+    new_reg = [input_title, value_input, description]
     button = PushButton(window, grid=[2, 4], text="Atualizar", command=edit, args=[window, connect, reg_dict, new_reg])
-    text_name.font = sex_name.font = email.font = phone_text.font = button.font = 'Calibri'
-    name.bg = email.bg = phone.bg = 'white'
+    text_title.font = text_value.font = description.font = button.font = 'Calibri'
+    input_title.bg = value_input.bg = description.bg = 'white'
     button.bg = '#CB9888'
     window.tk.resizable(0, 0)
     window.show(wait=True)
