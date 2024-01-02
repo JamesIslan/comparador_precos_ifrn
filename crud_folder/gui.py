@@ -73,7 +73,7 @@ def remove(connection, reg):
 
 
 def window_add(id):
-    window = Window(app, width=400, height=250)
+    window = Window(app, width=400, height=250, title='Adicionar Produto')
     window.bg = '#EDE7DF'
     box_inputs = Box(window,layout='grid',width='fill')
     text_title = Text(box_inputs, text='Título:', grid=[0, 0])
@@ -99,7 +99,7 @@ def window_edit(connect, reg):
     except TypeError:
         return
 
-    window = Window(app, width=400, height=250)
+    window = Window(app, width=400, height=250, title='Janela de Edição')
     window.bg = '#EDE7DF'
     box_inputs = Box(window,layout='grid',width='fill')
     text_title = Text(box_inputs, text='Título:', grid=[0, 0])
@@ -188,7 +188,7 @@ def submit():
         if data_input in rows:
             id_store = connect.read(fields=['id_loja'],table='lojas', where_fields=['email'], where_values=[email_input.value])[0][0]
             global options
-            options = Window(app, width=400, height=250, bg='#EDE7DF',)
+            options = Window(app, width=400, height=250, bg='#EDE7DF', title='Janela de Opções')
             options.when_closed = app.destroy
             box_options = Box(options, layout='grid')
             options.tk.resizable(0, 0)
@@ -199,7 +199,7 @@ def submit():
             app.hide()
             options.show()
         else:
-            app.warn(title='Inform', text='Usuário e/ou senha inválidos')
+            app.warn(title='Inform', text='Email e/ou senha inválidos')
             pwd_input.value = email_input.value = ''
     connect.close()
 
