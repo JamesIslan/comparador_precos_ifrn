@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página Produto - MePoupe</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <header class="cabecalho_geral">
+      <!--Perguntar sobre uso de nav e div-->
+      <nav class="nav_item cabecalho_logo">Logo</nav>
+      <nav class="nav_item cabecalho_sua_loja">
+        <a class="nav_link" href="teste-redirecionamento/sua-loja.html">
+          <img class="cabecalho_icon" src="./assets/img/icone-sua-loja.png" alt="Ícone de loja">
+          <p class="cabecalho_texto">Sua Loja</p>
+        </a>
+      </nav>
+      <nav class="nav_item cabecalho_produtos_add">
+        <a class="nav_link" href="teste-redirecionamento/produtos-add.html">
+          <img class="cabecalho_icon" src="./assets/img/icone-produtos-add.png" alt="Ícone de cesta de compras para produtos adicionados">
+          <p class="cabecalho_texto">Produtos Adicionados</p>
+        </a>
+      </nav>
+      
+      <nav class="nav_item cabecalho_produtos_salvos">
+        <a class="nav_link" href="teste-redirecionamento/produtos-salvos.html">
+          <img class="cabecalho_icon" src="./assets/img/icone-produtos-salvos.png" alt="Ícone de cesta de compras para produtos salvos">
+          <p class="cabecalho_texto">Produtos Salvos</p>
+        </a>
+      </nav>
+      <nav class="nav_item cabecalho_barra_pesquisa">
+        <img class="cabecalho_icon" id="icone_lupa" src="./assets/img/icone-lupa.png" alt="Ícone de lupa">
+        <input class="barra_pesquisa" type="text" name="barra_pesquisa" id="barra_pesquisa" placeholder="Pesquise aqui">
+      </nav>
+      <nav class="nav_item cabecalho_usuario">
+        <a href=""><img class="cabecalho_icon" src="./assets/img/icone-usuario.png" alt="Ícone de usuário"></a>
+      </nav>
+    </header>
+    <hr>
+    <main class="conteudo">
+      <section class="secao_cima">
+        <div class="container_esq">
+          <div class="avaliacao">
+            <div class="numero_estrelas">
+              <span class="numero">4,5/5</span>
+              <div class="estrelas">
+                <img class="estrela" src="assets/img/estrela.svg" alt="">
+                <img class="estrela" src="assets/img/estrela.svg" alt="">
+                <img class="estrela" src="assets/img/estrela.svg" alt="">
+                <img class="estrela" src="assets/img/estrela.svg" alt="">
+                <img class="estrela" src="assets/img/estrela.svg" alt="">
+              </div>
+            </div>
+            <span class="qtd_avaliacao">(1314 avaliações)</span>
+          </div>
+          <div class="container_produto">
+            <img src="assets/img/produto.svg" alt="">
+          </div>
+          <div class="botao botao_salvar">
+            <img src="assets/img/cesta-compras-estrela.svg" alt="">
+            Salvar
+          </div>
+        </div>
+        <div class="container_dir">
+          <div class="informacoes_produto">
+            <h1 id="nome_produto">Smartphone Motorola Moto G50</h1>
+            <p class="nome_loja">Loja do Fulano • @nomedaloja</p>
+            <p class="endereco_loja">Rua Fulano de Tal, 66, Bairro João Emerson</p>
+            <p class="cidade_loja">Florânia/RN</p>
+          </div>
+          <hr>
+          <div class="comparador">
+            <h2 class="preco_produto">R$ 10,00</h2>
+            <div class="botao">
+              Comparar
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="secao_baixo" width="100%">
+        <div class="produtos" width="100%">
+          <h3 id="heading_produtos">PRODUTOS SIMILARES</h3>
+          <hr size="1" width="100%" noshade/>
+          <div class="flex_ordenar">
+            <p class="ordenar">Sua localização: </p>
+            <select name="Cidade - UF" class="botao_selecionar">
+              <option>Florânia - RN</option>
+              <option>Acari - RN</option>
+              <option>Currais Novos - RN</option>
+            </select>
+          </div>
+        </div>
+        <div class="recomendacao">
+          <div class="container_produto_r">
+            <img src="assets/img/produto.svg" id="produto" alt="">
+          </div>
+          <div class="descricao_e_botao">
+            <div class="container_dir1">
+              <div class="flex_comparador">
+                <h2 id="preco_comp">R$ 10,00</h2>
+              </div>
+              <hr size="1" width="100%" align="center" noshade>
+              <span id="endereco">Rua Fulano De Tal, Nº 100. Florânia/RN</span>
+              <div class="grid_loja_avaliacao">
+                <div class="avaliacao">
+                  <img src="assets/img/estrela.svg" class="estrelas" alt="">
+                  <p class="texto">4,5/5</p>
+                </div>
+                <div class="loja">
+                  <!--<p class="texto">4,5/5</p> -->
+                  <span id="nome_loja">Loja do Fulano</span>
+                  <span id="divisao">•</span> 
+                  <span id="user">@nomedaloja</span>
+                </div>
+              </div>
+            </div> 
+            <div class="add_carrinho">
+              <img src="assets/img/cesta-compras-estrela.svg" class="img" alt=""> 
+            </div>
+          </div>
+        </div>
+        
+
+        <div class="recomendacao">
+          <div class="container_produto_r">
+            <img src="assets/img/produto.svg" id="produto" alt="">
+          </div>
+          <div class="descricao_e_botao">
+            <div class="container_dir1">
+              <div class="flex_comparador">
+                <h2 id="preco_comp">R$ 10,00</h2>
+              </div>
+              <hr size="1" width="100%" align="center" noshade>
+              <span id="endereco">Rua Fulano De Tal, Nº 100. Florânia/RN</span>
+              <div class="grid_loja_avaliacao">
+                <div class="avaliacao">
+                  <img src="assets/img/estrela.svg" class="estrelas" alt="">
+                  <p class="texto">4,5/5</p>
+                </div>
+                <div class="loja">
+                  <!--<p class="texto">4,5/5</p> -->
+                  <span id="nome_loja">Loja do Fulano</span>
+                  <span id="divisao">•</span> 
+                  <span id="user">@nomedaloja</span>
+                </div>
+              </div>
+            </div> 
+            <div class="add_carrinho">
+              <img src="assets/img/cesta-compras-estrela.svg" class="img" alt=""> 
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="recomendacao">
+          <div class="container_produto_r">
+            <img src="assets/img/produto.svg" id="produto" alt="">
+          </div>
+          <div class="descricao_e_botao">
+            <div class="container_dir1">
+              <div class="flex_comparador">
+                <h2 id="preco_comp">R$ 10,00</h2>
+              </div>
+              <hr size="1" width="100%" align="center" noshade>
+              <span id="endereco">Rua Fulano De Tal, Nº 100. Florânia/RN</span>
+              <div class="grid_loja_avaliacao">
+                <div class="avaliacao">
+                  <img src="assets/img/estrela.svg" class="estrelas" alt="">
+                  <p class="texto">4,5/5</p>
+                </div>
+                <div class="loja">
+                  <!--<p class="texto">4,5/5</p> -->
+                  <span id="nome_loja">Loja do Fulano</span>
+                  <span id="divisao">•</span> 
+                  <span id="user">@nomedaloja</span>
+                </div>
+              </div>
+            </div> 
+            <div class="add_carrinho">
+              <img src="assets/img/cesta-compras-estrela.svg" class="img" alt=""> 
+            </div>
+          </div>
+        </div>
+        
+      </section>
+    </main>
+    <footer class="rodape_geral">
+      <img id="rodape_logo_ifrn" src="./assets/img/logo-ifrn-horizontal.png" alt="Logo Instituto Federal do Rio Grande do Norte">
+      <p id="rodape_info">
+        Sistema desenvolvido sob o aval do Instituto Federal do Rio Grande do Norte - Campus Currais Novos • © 2023. Todos os direitos reservados.
+      </p>
+    </footer>
+  </body>
+</html>
