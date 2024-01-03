@@ -7,6 +7,37 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
+    <header class="cabecalho_geral">
+      <!--Perguntar sobre uso de nav e div-->
+      <nav class="nav_item cabecalho_logo">Logo</nav>
+      <nav class="nav_item cabecalho_sua_loja">
+        <a class="nav_link" href="teste-redirecionamento/sua-loja.html">
+          <img class="cabecalho_icon" src="./assets/img/icone-sua-loja.png" alt="Ícone de loja">
+          <p class="cabecalho_texto">Sua Loja</p>
+        </a>
+      </nav>
+      <nav class="nav_item cabecalho_produtos_add">
+        <a class="nav_link" href="teste-redirecionamento/produtos-add.html">
+          <img class="cabecalho_icon" src="./assets/img/icone-produtos-add.png" alt="Ícone de cesta de compras para produtos adicionados">
+          <p class="cabecalho_texto">Produtos Adicionados</p>
+        </a>
+      </nav>
+      
+      <nav class="nav_item cabecalho_produtos_salvos">
+        <a class="nav_link" href="teste-redirecionamento/produtos-salvos.html">
+          <img class="cabecalho_icon" src="./assets/img/icone-produtos-salvos.png" alt="Ícone de cesta de compras para produtos salvos">
+          <p class="cabecalho_texto">Produtos Salvos</p>
+        </a>
+      </nav>
+      <nav class="nav_item cabecalho_barra_pesquisa">
+        <img class="cabecalho_icon" id="icone_lupa" src="./assets/img/icone-lupa.png" alt="Ícone de lupa">
+        <input class="barra_pesquisa" type="text" name="barra_pesquisa" id="barra_pesquisa" placeholder="Pesquise aqui">
+      </nav>
+      <nav class="nav_item cabecalho_usuario">
+        <a href=""><img class="cabecalho_icon" src="./assets/img/icone-usuario.png" alt="Ícone de usuário"></a>
+      </nav>
+    </header>
+    <hr>
     <main class="conteudo">
       <section class="secao_lojas_seguidas">
         <h2 class="titulo" id="titulo_lojas_seguidas">Novos Produtos</h2>
@@ -308,5 +339,11 @@
         </div>
       </section>
     </main>
+    <footer class="rodape_geral">
+      <img id="rodape_logo_ifrn" src="./assets/img/logo-ifrn-horizontal.png" alt="Logo Instituto Federal do Rio Grande do Norte">
+      <p id="rodape_info">
+        Sistema desenvolvido sob o aval do Instituto Federal do Rio Grande do Norte - Campus Currais Novos • © 2023. Todos os direitos reservados.
+      </p>
+    </footer>
   </body>
 </html>
