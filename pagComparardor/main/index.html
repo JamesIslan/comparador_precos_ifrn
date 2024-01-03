@@ -5,10 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Página Produto - MePoupe</title>
   <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="header_footer_assets/css/style_header_footer.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
   <body>
+
+    <header class="cabecalho_geral">
+      <nav class="nav_item cabecalho_logo">Logo</nav>
+      <nav class="nav_item cabecalho_sua_loja">
+        <a class="nav_link" href="teste-redirecionamento/sua-loja.html">
+          <img class="cabecalho_icon" src="./header_footer_assets/img/icone-sua-loja.png" alt="Ícone de loja">
+          <p class="cabecalho_texto">Sua Loja</p>
+        </a>
+      </nav>
+      <nav class="nav_item cabecalho_produtos_add">
+        <a class="nav_link" href="teste-redirecionamento/produtos-add.html">
+          <img class="cabecalho_icon" src="./header_footer_assets/img/icone-produtos-add.png" alt="Ícone de cesta de compras para produtos adicionados">
+          <p class="cabecalho_texto">Produtos Adicionados</p>
+        </a>
+      </nav>
+      
+      <nav class="nav_item cabecalho_produtos_salvos">
+        <a class="nav_link" href="teste-redirecionamento/produtos-salvos.html">
+          <img class="cabecalho_icon" src="./header_footer_assets/img/icone-produtos-salvos.png" alt="Ícone de cesta de compras para produtos salvos">
+          <p class="cabecalho_texto">Produtos Salvos</p>
+        </a>
+      </nav>
+      <nav class="nav_item cabecalho_barra_pesquisa">
+        <img class="cabecalho_icon" id="icone_lupa" src="./header_footer_assets/img/icone-lupa.png" alt="Ícone de lupa">
+        <input class="barra_pesquisa" type="text" name="barra_pesquisa" id="barra_pesquisa" placeholder="Pesquise aqui">
+      </nav>
+      <nav class="nav_item cabecalho_usuario">
+        <a href=""><img class="cabecalho_icon" src="./header_footer_assets/img/icone-usuario.png" alt="Ícone de usuário"></a>
+      </nav>
+    </header>
+    <!-- Adicionei a classe "linha_header" -->
+    <hr class="linha_header">
+    
+
     <main class="conteudo">
       <section class="secao_cima">
         <div class="container_esq">
@@ -64,7 +99,7 @@
         </div>
         <div class="recomendacao">
           <div class="container_produto_r">
-            <img src="assets/img/produto.svg" id="produto" alt="">
+            <img src="./assets/img/placeholder/img11.jpg" alt="" class="imagem_padrao" id="imagem_produto_11">
           </div>
           <div class="descricao_e_botao">
             <div class="container_dir1">
@@ -95,7 +130,7 @@
 
         <div class="recomendacao">
           <div class="container_produto_r">
-            <img src="assets/img/produto.svg" id="produto" alt="">
+            <img src="./assets/img/placeholder/img10.jpg" alt="" class="imagem_padrao" id="imagem_produto_10">
           </div>
           <div class="descricao_e_botao">
             <div class="container_dir1">
@@ -126,7 +161,7 @@
         
         <div class="recomendacao">
           <div class="container_produto_r">
-            <img src="assets/img/produto.svg" id="produto" alt="">
+            <img src="./assets/img/placeholder/img1.jpg" alt="" class="imagem_padrao" id="imagem_produto_1">
           </div>
           <div class="descricao_e_botao">
             <div class="container_dir1">
@@ -156,5 +191,12 @@
         
       </section>
     </main>
+
+    <footer class="rodape_geral">
+      <img id="rodape_logo_ifrn" src="./header_footer_assets/img/logo-ifrn-horizontal.png" alt="Logo Instituto Federal do Rio Grande do Norte">
+      <p id="rodape_info">
+        Sistema desenvolvido sob o aval do Instituto Federal do Rio Grande do Norte - Campus Currais Novos • © 2023. Todos os direitos reservados.
+      </p>
+    </footer>
   </body>
 </html>

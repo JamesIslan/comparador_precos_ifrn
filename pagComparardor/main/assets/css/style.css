@@ -223,7 +223,8 @@ h3#heading_produtos {
 .recomendacao{
   display: flex;
   flex-direction: row;
-  gap: 0px;
+  /* Adicionei o gap entre a imagem e o preço */
+  gap: 5px;
   margin-bottom: 60px;
   width: 100%;
   justify-content: flex-start;
@@ -234,9 +235,15 @@ h3#heading_produtos {
   & .container_produto_r{
       display: flex;
       align-items: center;
-  }
-  & img#produto {
-      height: 158.8px;
+      /* Adicionei a largura da imagem */
+      width: 200px;
+      & .imagem_padrao {
+        object-fit: cover;
+        width: inherit;
+        height: inherit;
+        aspect-ratio: 1;
+        border-radius: 1rem;
+      }
   }
   & .descricao_e_botao{
     display: flex;
