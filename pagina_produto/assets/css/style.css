@@ -30,6 +30,10 @@ h1 {
   font-size: 4rem;
 }
 
+.cabecalho_logo, .nav_item, .produto_padrao, .loja_padrao{
+  cursor: pointer;
+}
+
 #preco_produto{
   font-size: clamp(4rem, 4vw, 5rem);
 }

@@ -27,7 +27,7 @@ body {
   font-size: 2rem;
 }
 
-.cabecalho_logo, .nav_item, .produto_padrao, .loja_padrao, .container_produto_r{
+.cabecalho_logo, .nav_item, .produto_padrao, .loja_padrao, .produto{
   cursor: pointer;
 }
 
@@ -122,43 +122,16 @@ h1 {
   font-size: 4rem;
 }
 
-h2 {
-  font-size: clamp(4rem, 4vw, 5rem);
-}
-
 span {
   font-family: var(--site-font);
 }
 
+#linha_produtos_salvos{
+  margin-bottom: 5rem;
+}
+
 .conteudo {
   margin: clamp(2rem, 5vw, 5rem);
-}
-
-/*Seção Cima*/
-
-.secao_cima {
-  display: flex;
-  gap: 4rem;
-  flex-wrap: wrap;
-}
-
-.container_dir,
-.container_esq {
-  flex: 1;
-}
-
-.container_esq {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  max-width: 50rem;
-}
-
-.avaliacao {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
 }
 
 .numero_estrelas {
@@ -244,7 +217,7 @@ span {
   align-items: flex-start;
 }
 
-h3#heading_produtos {
+#heading_produtos_salvos {
   font-size: clamp(2.3rem, 5vw, 4rem);
   margin-block-start: 0;
   margin-block-end: 0;
@@ -324,12 +297,14 @@ h3#heading_produtos {
 .recomendacao {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   gap: 0px;
   margin-bottom: 60px;
-  width: 100%;
-  justify-content: flex-start;
+  /* width: 100%; */
+  width: 90%;
+  /* justify-content: flex-start; */
   border: 10px solid #d1a89a;
-  border-radius: 21.83px;
+  border-radius: 22px;
   padding: 2%;
 
   & .container_produto_r {
@@ -339,48 +314,30 @@ h3#heading_produtos {
 
   & .descricao_e_botao {
     display: flex;
-    width: 100%;
-    justify-content: space-between;
-
-    & .add_carrinho {
-      width: 137px;
-      height: 40px;
-      background-color: var(--highlight-color-2);
-      border-radius: 1rem;
-      transition: all 150ms ease-in-out;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      &:hover {
-        background-color: var(--highlight-color-3);
-        border-color: var(--highlight-color-3);
-      }
-
-      & .img {
-        height: 35px;
-        align-self: center;
-      }
-    }
+    width: 50%;
+    /* width: 100%; */
+    /* justify-content: space-between; */
 
     & .container_dir1 {
+      width: 70%;
       margin-left: 2%;
       display: flex;
       flex-direction: column;
       justify-content: center;
-
+      & .nome_comp{
+        font-size: clamp(3rem, 3vw, 5.5rem);
+      }
       & .preco_comp {
         margin: 0;
-        font-size: clamp(4rem, 3vw, 5rem);
+        font-size: clamp(2.5rem, 2vw, 4rem);
       }
 
       & .flex_comparador {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: flex-start;
-        align-items: center;
-        gap: 2vw;
+        align-items: flex-start;
+        /* gap: 1rem; */
       }
 
       & hr {
@@ -393,7 +350,7 @@ h3#heading_produtos {
       & span {
         font-family: var(--site-font);
         color: #60664F;
-        font-size: 18px;
+        font-size: clamp(1.5rem,2vw,2rem);
       }
 
       & .grid_loja_avaliacao {
@@ -427,9 +384,10 @@ h3#heading_produtos {
 
         & .avaliacao {
           grid-column-start: 1;
+          gap: 1rem;
 
           & .estrelas {
-            width: 4rem;
+            width: 3rem;
           }
 
           & .texto {
@@ -441,8 +399,13 @@ h3#heading_produtos {
   }
 }
 
+.endereco{
+  font-size: clamp(1.5rem,5vw,2.5rem) !important;
+}
+
 .produto {
-  width: clamp(20rem, 40vw, 45rem);
+  /* width: clamp(20rem, 40vw, 45rem); */
+  width: clamp(33rem, 26vw, 50rem);
   border-radius: 1.6rem;
   object-fit: cover;
 }
@@ -462,8 +425,44 @@ h3#heading_produtos {
 }
 
 @media screen and (max-width: 1000px) {
+  .recomendacao {
+    flex-direction: column;
+    align-items: center;
+
+    & .descricao_e_botao {
+      flex-direction: column;
+      gap: 5px;
+      align-items: center;
+      flex-direction: column-reverse;
+
+      & .container_dir1 {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .produto {
+    width: clamp(20rem,40vw,40rem) !important;
+    margin-bottom: 1rem;
+  }
   .nav_link p {
     display: none;
+  }
+  .descricao_e_botao{
+    width: 100% !important;
+  }
+  .nome_comp{
+    font-size: clamp(1.6rem, 4vw, 5.5rem) !important;
+  }
+  .preco_comp{
+    font-size: clamp(1.3rem, 2vw, 4rem) !important;
+  }
+  .endereco{
+    font-size: clamp(1.5rem,3.5vw,2.3rem) !important;
+  }
+  .avaliacao, .loja{
+    aspect-ratio: 4/2;
+    width: clamp(12rem,15vw,15rem) !important;
   }
 }
 
@@ -487,7 +486,7 @@ h3#heading_produtos {
   }
 }
 
-@media screen and (max-width: 880px) {
+/* @media screen and (max-width: 880px) {
 
   .recomendacao {
     flex-direction: column;
@@ -508,7 +507,7 @@ h3#heading_produtos {
   .produto {
     margin-bottom: 1rem;
   }
-}
+} */
 
 @media screen and (max-width: 768px) {
   .info_loja {

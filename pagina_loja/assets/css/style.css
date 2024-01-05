@@ -20,6 +20,10 @@ body {
   margin: 0;
 }
 
+.cabecalho_logo, .nav_item, .produto_padrao, .loja_padrao, .item_promo{
+  cursor: pointer;
+}
+
 /*Header*/
 .cabecalho_geral {
   display: flex;

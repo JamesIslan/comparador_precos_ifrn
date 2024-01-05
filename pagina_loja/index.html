@@ -26,7 +26,7 @@
     </nav>
     
     <nav class="nav_item cabecalho_produtos_salvos">
-      <a class="nav_link" href="teste-redirecionamento/produtos-salvos.html">
+      <a class="nav_link" href="../pagina_produtos_salvos/index.html">
         <img class="cabecalho_icon" src="./assets/img/icone-produtos-salvos.png" alt="Ícone de cesta de compras para produtos salvos">
         <p class="cabecalho_texto">Produtos Salvos</p>
       </a>
@@ -62,7 +62,7 @@
               <span id="avalia_num">4,5/5</span>
               <img id="icon_avalia" src="./assets/img/star_icon.svg" alt="Estrela avaliação">
             </div>
-            <button class="botao_tag" id="avalia_ver">Ver Avaliações</button>
+            <button class="botao_tag" id="avalia_ver" onclick="window.open('#avaliacoes', '_blank')">Ver Avaliações</button>
           </div>
           <div class="desc_loja" id="desc_linha_4">
             <img id="icon_whatsapp" src="./assets/img/whatsapp_icon.svg" alt="Logo Whatsapp">
@@ -189,7 +189,7 @@
         </div>
       </div>
     </section>
-    <section class="avaliacoes">
+    <section class="avaliacoes" id="avaliacoes">
       <h3 class="heading" id="avaliacoes">AVALIAÇÕES</h3>
       <h4 class="heading" id="sua_avalia">Deixe sua avaliação!</h4>
       <!-- <input type="text" name="input_avalia" id="input_avalia" maxlength="100"> -->

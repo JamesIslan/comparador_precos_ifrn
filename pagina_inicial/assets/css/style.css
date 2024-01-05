@@ -31,6 +31,10 @@ body {
   padding: clamp(2rem, 5vw, 5rem);
 }
 
+.cabecalho_logo, .nav_item, .produto_padrao, .loja_padrao{
+  cursor: pointer;
+}
+
 /*Header*/
 .cabecalho_geral {
   display: flex;
